@@ -163,28 +163,9 @@
   footer p { font-size: 0.75rem; color: var(--text-soft); }
   .footer-note { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--text-soft); letter-spacing: 0.08em; }
 
-  /* ── HOW TO ADD TRIPS (collapsible) ── */
-  details { border: 1px solid var(--border); background: var(--surface); margin-top: 2.5rem; }
-  summary {
-    padding: 1rem 1.25rem; cursor: pointer;
-    font-family: 'DM Mono', monospace; font-size: 0.72rem;
-    letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid);
-    list-style: none; display: flex; justify-content: space-between; align-items: center;
-    user-select: none;
-  }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: '+'; font-size: 1rem; color: var(--text-soft); transition: transform 0.2s; }
-  details[open] summary::after { content: '−'; }
-  .details-body { padding: 0 1.25rem 1.25rem; border-top: 1px solid var(--border); }
-  .details-body p { font-size: 0.83rem; color: var(--text-mid); margin-top: 1rem; line-height: 1.7; }
-  .details-body code { font-family: 'DM Mono', monospace; font-size: 0.78rem; background: var(--bg); padding: 0.1rem 0.45rem; border: 1px solid var(--border); color: var(--gold); }
-  .dir-tree { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--text-mid); background: var(--bg); border: 1px solid var(--border); padding: 1rem 1.25rem; margin-top: 0.75rem; line-height: 2; }
-  .dir-tree .dir-gold { color: var(--gold); }
-  .dir-tree .dir-soft { color: var(--text-soft); }
-
   /* ── ANIMATIONS ── */
   @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-  .trip-card, .stats, details { animation: fadeIn 0.5s ease both; }
+  .trip-card, .stats { animation: fadeIn 0.5s ease both; }
   .trip-card:nth-child(1) { animation-delay: 0.05s; }
   .trip-card:nth-child(2) { animation-delay: 0.12s; }
   .trip-card:nth-child(3) { animation-delay: 0.19s; }
@@ -214,8 +195,6 @@
         <div class="logo">Trip<em>s</em></div>
       </div>
       <div class="header-meta">
-        <p><strong>github.com/[you]/trips</strong></p>
-        <p>Hosted on GitHub Pages</p>
         <p>Updated March 2026</p>
       </div>
     </div>
@@ -286,35 +265,8 @@
     <div class="trip-arrow">→</div>
   </div>
 
-  <!-- ADD NEW -->
-  <div class="add-trip">
-    <div class="add-icon">+</div>
-    <p>To add a new trip, create a folder in this repo and add an <code>index.html</code> — then link it above. See instructions below.</p>
-  </div>
-
-  <!-- HOW TO ADD TRIPS -->
-  <details>
-    <summary>How to add future trips</summary>
-    <div class="details-body">
-      <p>This repo is structured for GitHub Pages. Each trip lives in its own folder with an <code>index.html</code>. The root <code>index.html</code> is this page.</p>
-      <div class="dir-tree">
-<span class="dir-gold">trips/</span>
-├── <span class="dir-gold">index.html</span>          <span class="dir-soft">← this page</span>
-├── <span class="dir-gold">stockholm-march-2026/</span>
-│   └── <span class="dir-gold">index.html</span>      <span class="dir-soft">← Stockholm trip plan</span>
-├── <span class="dir-soft">lisbon-june-2026/</span>     <span class="dir-soft">← your next trip</span>
-│   └── <span class="dir-soft">index.html</span>
-└── <span class="dir-soft">tokyo-2027/</span>
-    └── <span class="dir-soft">index.html</span>
-      </div>
-      <p>To publish: push to the <code>main</code> branch. GitHub Pages will serve this at <code>[username].github.io/trips/</code>. Enable Pages in Settings → Pages → Source: main branch / root.</p>
-      <p>To add a trip to this index, copy one of the <code>trip-card</code> blocks above, remove the <code>future</code> class, update the href, date, title, and tags, and increment the stats counters.</p>
-    </div>
-  </details>
-
   <!-- FOOTER -->
   <footer>
-    <p>Personal travel archive — github.com/[you]/trips</p>
     <p class="footer-note">Built with HTML · No frameworks · GitHub Pages</p>
   </footer>
 
