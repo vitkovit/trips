@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Málaga — August 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #FAF3E3;
+    --sand-dark: #F1E6CE;
+    --ink: #26201A;
+    --ink-mid: #4A4036;
+    --ink-soft: #7A6E5F;
+    --terra: #C0532B;
+    --terra-deep: #8C3A1D;
+    --terra-light: #F7E4D8;
+    --azul: #1F5E7E;
+    --azul-light: #E2EEF4;
+    --olive: #5C6B33;
+    --olive-light: #EDF0DF;
+    --saffron: #C98A22;
+    --saffron-light: #FBF0DA;
+    --red: #9C2B2B;
+    --red-light: #F6E7E7;
+    --border: rgba(38,32,26,0.14);
+    --shadow: 0 2px 20px rgba(38,32,26,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Karla', sans-serif;
+    background: var(--sand);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ─── LANGUAGE TOGGLE ─── */
+  body.lang-en .pl { display: none !important; }
+  body:not(.lang-en) .en { display: none !important; }
+
+  /* ─── TYPOGRAPHY ─── */
+  h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 400; line-height: 1.2; }
+  h1 { font-size: clamp(3rem, 8vw, 6rem); letter-spacing: -0.02em; }
+  h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+  h3 { font-size: 1.4rem; }
+  h4 { font-size: 1.1rem; }
+
+  p { color: var(--ink-mid); }
+  .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,243,227,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; gap: 0;
+    overflow-x: auto; scrollbar-width: none;
+    height: 52px;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    text-decoration: none; color: var(--ink-soft);
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0 1.1rem; height: 52px; display: flex; align-items: center;
+    border-bottom: 2px solid transparent; white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  nav a:hover { color: var(--ink); border-bottom-color: var(--terra); }
+  nav .nav-home { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; color: var(--ink-soft); padding: 0 1rem 0 0; margin-right: 0.5rem; border-right: 1px solid var(--border); height: 52px; display: flex; align-items: center; white-space: nowrap; text-decoration: none; transition: color 0.2s; }
+  nav .nav-home:hover { color: var(--ink); border-bottom: none; }
+  .lang-btn {
+    margin-left: auto; flex-shrink: 0;
+    font-family: 'Karla', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    color: var(--terra); background: var(--terra-light);
+    border: 1px solid rgba(192,83,43,0.35); border-radius: 2px;
+    padding: 0.35rem 0.8rem; cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn:hover { background: var(--terra); color: var(--sand); }
+
+  /* ─── LAYOUT ─── */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+  section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 3rem 0 3.5rem;
+    background: linear-gradient(160deg, #8C3A1D 0%, #6E2B13 55%, #59220F 100%);
+    position: relative;
+  }
+  .hero::after {
+    /* azulejo stripe */
+    content: '';
+    position: absolute; left: 0; right: 0; bottom: 0; height: 6px;
+    background: repeating-linear-gradient(90deg,
+      var(--azul) 0 32px, var(--sand) 32px 40px,
+      var(--saffron) 40px 72px, var(--sand) 72px 80px,
+      var(--terra) 80px 112px, var(--sand) 112px 120px);
+  }
+  .hero .container { position: relative; animation: fadeUp 0.5s ease both; }
+  .hero-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #E8B04B; margin-bottom: 0.75rem; }
+  .hero-title { font-size: clamp(3rem, 8vw, 5.5rem); letter-spacing: -0.02em; color: #FBF3E1; margin-bottom: 0.4rem; }
+  .hero-subtitle { font-family: 'Fraunces', serif; font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 300; font-style: italic; color: rgba(251,243,225,0.55); margin-bottom: 2.5rem; }
+  .hero-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1px; background: rgba(251,243,225,0.12); border: 1px solid rgba(251,243,225,0.12); overflow: hidden; }
+  .hero-card { background: rgba(251,243,225,0.05); padding: 1rem 1.25rem; }
+  .hero-card .label { margin-bottom: 0.3rem; color: rgba(251,243,225,0.4); }
+  .hero-card .value { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 500; line-height: 1.3; color: #FBF3E1; }
+  .hero-card .sub { font-size: 0.75rem; color: rgba(251,243,225,0.42); margin-top: 0.15rem; }
+
+  /* ─── SECTION HEADERS ─── */
+  .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 3rem; }
+  .section-number { font-family: 'Fraunces', serif; font-size: 4rem; font-weight: 300; color: rgba(140,58,29,0.16); line-height: 1; flex-shrink: 0; }
+  .section-header-text .label { margin-bottom: 0.3rem; }
+
+  /* ─── BADGES ─── */
+  .badge { display: inline-block; padding: 0.2rem 0.65rem; border-radius: 2px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; }
+  .badge-terra { background: var(--terra-light); color: var(--terra); border: 1px solid rgba(192,83,43,0.25); }
+  .badge-azul { background: var(--azul-light); color: var(--azul); border: 1px solid rgba(31,94,126,0.2); }
+  .badge-olive { background: var(--olive-light); color: var(--olive); border: 1px solid rgba(92,107,51,0.2); }
+  .badge-saffron { background: var(--saffron-light); color: var(--saffron); border: 1px solid rgba(201,138,34,0.25); }
+  .badge-red { background: var(--red-light); color: var(--red); border: 1px solid rgba(156,43,43,0.2); }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+  .badge.tbd { background: transparent; color: var(--red); border: 1px dashed rgba(156,43,43,0.5); }
+
+  /* ─── LINKS TO MAPS ─── */
+  a.maps { color: var(--azul); text-decoration: none; border-bottom: 1px solid rgba(31,94,126,0.35); transition: border-color 0.15s; }
+  a.maps:hover { border-bottom-color: var(--azul); }
+  a.maps::after { content: ' ↗'; font-size: 0.75em; }
+
+  /* ─── CARDS ─── */
+  .card { background: #FFFDF6; border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; }
+
+  /* ─── TRANSPORT BOX ─── */
+  .transport-option { border: 1px solid var(--border); margin-bottom: 1.2rem; overflow: hidden; }
+  .transport-header { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 1.25rem; background: #FFFDF6; border-bottom: 1px solid var(--border); }
+  .transport-header h4 { font-family: 'Karla', sans-serif; font-size: 0.9rem; font-weight: 700; }
+  .transport-body { padding: 1.1rem 1.25rem; }
+  .transport-steps { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .transport-steps li { display: flex; gap: 1rem; align-items: flex-start; font-size: 0.88rem; color: var(--ink-mid); }
+  .step-circle { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--ink); display: flex; align-items: center; justify-content: center; font-size: 0.68rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .transport-meta { font-size: 0.78rem; color: var(--ink-soft); padding-top: 0.8rem; margin-top: 0.8rem; border-top: 1px solid var(--border); }
+  .recommended { border-color: var(--olive); }
+  .recommended .transport-header { background: var(--olive-light); border-bottom-color: rgba(92,107,51,0.25); }
+  .recommended-label { font-size: 0.7rem; font-weight: 700; color: var(--olive); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* ─── TIMELINE ─── */
+  .timeline { position: relative; }
+  .timeline-item { display: grid; grid-template-columns: 80px 1fr; gap: 0; }
+  .timeline-time-col { padding-top: 0.2rem; text-align: right; padding-right: 2rem; position: relative; }
+  .timeline-time-col::after { content: ''; position: absolute; right: -1px; top: 8px; bottom: -8px; width: 1px; background: var(--border); }
+  .timeline-item:last-child .timeline-time-col::after { display: none; }
+  .timeline-dot { position: absolute; right: -5px; top: 6px; width: 9px; height: 9px; border-radius: 50%; background: var(--sand); border: 2px solid var(--ink-soft); }
+  .timeline-dot.accent { border-color: var(--terra); background: var(--terra); }
+  .timeline-time { font-size: 0.78rem; font-weight: 700; color: var(--ink-soft); white-space: nowrap; }
+  .timeline-content { padding: 0 0 2.5rem 2rem; }
+  .timeline-content h4 { font-family: 'Karla', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--ink); }
+  .timeline-content p { font-size: 0.87rem; line-height: 1.6; color: var(--ink-soft); }
+  .timeline-content .badge-row { margin-top: 0.5rem; }
+
+  /* ─── DEPARTURE BOX ─── */
+  .departure-critical { background: var(--red-light); border: 1px solid rgba(156,43,43,0.25); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+  .departure-critical .label { color: var(--red); margin-bottom: 0.4rem; }
+  .departure-critical p { color: var(--red); font-size: 0.88rem; }
+
+  /* ─── ALARM BLOCK ─── */
+  .alarm-sequence { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); overflow: hidden; }
+  .alarm-row { display: flex; align-items: center; gap: 1.25rem; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); background: #FFFDF6; }
+  .alarm-row:last-child { border-bottom: none; }
+  .alarm-row.highlight { background: var(--olive-light); }
+  .alarm-row.warn { background: var(--red-light); }
+  .alarm-time { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 500; min-width: 70px; color: var(--ink); }
+  .alarm-text { font-size: 0.88rem; color: var(--ink-mid); flex: 1; }
+  .alarm-text strong { font-weight: 700; color: var(--ink); }
+
+  /* ─── FOOD GRID ─── */
+  .food-card { border: 1px solid var(--border); padding: 1.25rem; background: #FFFDF6; }
+  .food-card .food-name { font-family: 'Karla', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--ink); }
+  .food-card .food-location { font-size: 0.78rem; color: var(--ink-soft); margin: 0.2rem 0 0.6rem; }
+  .food-card .food-desc { font-size: 0.85rem; color: var(--ink-mid); line-height: 1.55; }
+  .food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .food-grid .food-card { border: none; border-radius: 0; }
+  .food-card.featured { grid-column: 1 / -1; }
+
+  /* ─── TIPS ─── */
+  .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .tip-item { display: flex; gap: 1rem; }
+  .tip-item .tip-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .tip-item h4 { font-family: 'Karla', sans-serif; font-size: 0.88rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .tip-item p { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.55; }
+
+  /* ─── DIVIDER ─── */
+  .terra-line { width: 40px; height: 2px; background: var(--terra); margin: 1rem 0 1.5rem; }
+
+  /* ─── INLINE INFO ─── */
+  .info-box { background: var(--azul-light); border: 1px solid rgba(31,94,126,0.2); padding: 1rem 1.25rem; font-size: 0.87rem; color: var(--azul); margin-bottom: 1.2rem; }
+  .warn-box { background: var(--saffron-light); border: 1px solid rgba(201,138,34,0.3); padding: 1rem 1.25rem; font-size: 0.87rem; color: var(--saffron); margin-bottom: 1.2rem; }
+  .tbd-box { background: transparent; border: 1px dashed rgba(156,43,43,0.5); padding: 1rem 1.25rem; font-size: 0.87rem; color: var(--red); margin-bottom: 1.2rem; }
+
+  /* ─── FLIGHT DISPLAY ─── */
+  .flight-strip { border: 1px solid var(--border); padding: 1.25rem 1.5rem; background: #FFFDF6; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+  .flight-time { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 500; }
+  .flight-city { font-size: 0.78rem; color: var(--ink-soft); }
+  .flight-line { flex: 1; min-width: 80px; text-align: center; }
+  .flight-line-bar { height: 1px; background: var(--border); position: relative; margin: 0.4rem 0; }
+  .flight-line-bar::after { content: '›'; position: absolute; right: -4px; top: -9px; font-size: 1rem; color: var(--ink-soft); }
+  .flight-meta { font-size: 0.75rem; color: var(--ink-soft); }
+
+  /* ─── FOOTER ─── */
+  footer { background: #59220F; color: rgba(251,243,225,0.55); padding: 3rem 2rem; text-align: center; font-size: 0.8rem; }
+  footer strong { color: #FBF3E1; }
+
+  /* ─── MAP SECTION ─── */
+  .map-section { padding: 4rem 0; border-bottom: 1px solid var(--border); background: var(--sand-dark); }
+  .map-embed-wrap { position: relative; margin-bottom: 1rem; border: 1px solid var(--border); overflow: hidden; width: 100%; aspect-ratio: 640 / 480; }
+  .map-embed-wrap iframe { display: block; width: 100%; height: 100%; border: none; }
+  .map-placeholder { display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; width: 100%; aspect-ratio: 640 / 300; border: 1px dashed rgba(156,43,43,0.5); color: var(--red); font-size: 0.9rem; margin-bottom: 1rem; }
+
+  /* ─── PRINT ─── */
+  @media print {
+    nav { display: none; }
+    section { page-break-inside: avoid; }
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 600px) {
+    .container { padding: 0 1.25rem; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .timeline-item { grid-template-columns: 64px 1fr; }
+    .hero-cards { grid-template-columns: 1fr 1fr; }
+    .alarm-time { font-size: 1.3rem; min-width: 56px; }
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-home" href="index.html"><span class="pl">← Wszystkie wyjazdy</span><span class="en">← All trips</span></a>
+  <a href="#top">Málaga '26</a>
+  <a href="#map"><span class="pl">Mapa</span><span class="en">Map</span></a>
+  <a href="#arriving"><span class="pl">Przyjazd</span><span class="en">Arrival</span></a>
+  <a href="#sunday"><span class="pl">Niedziela</span><span class="en">Sunday</span></a>
+  <a href="#monday"><span class="pl">Poniedziałek</span><span class="en">Monday</span></a>
+  <a href="#tuesday"><span class="pl">Wtorek</span><span class="en">Tuesday</span></a>
+  <a href="#wednesday"><span class="pl">Środa</span><span class="en">Wednesday</span></a>
+  <a href="#thursday"><span class="pl">Czwartek</span><span class="en">Thursday</span></a>
+  <a href="#food"><span class="pl">Jedzenie</span><span class="en">Food</span></a>
+  <a href="#tips"><span class="pl">Wskazówki</span><span class="en">Tips</span></a>
+  <button class="lang-btn" id="langBtn" type="button">EN</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="top">
+<div class="container">
+  <div class="hero-eyebrow"><span class="pl">Plan wyjazdu — 2 podróżników</span><span class="en">Trip plan — 2 travellers</span></div>
+  <h1 class="hero-title">Málaga</h1>
+  <p class="hero-subtitle"><span class="pl">10 – 14 sierpnia 2026 &nbsp;·&nbsp; Andaluzja na luzie</span><span class="en">August 10 – 14, 2026 &nbsp;·&nbsp; Andalusia, unhurried</span></p>
+  <div class="hero-cards">
+    <div class="hero-card">
+      <div class="label"><span class="pl">Lot do Malagi</span><span class="en">Outbound flight</span></div>
+      <div class="value">— <span style="font-size:0.8rem;color:rgba(251,243,225,0.4)">TBC</span></div>
+      <div class="sub"><span class="pl">nr lotu i godziny do uzupełnienia · nd 10.08</span><span class="en">flight no. & times to be added · Sun 10 Aug</span></div>
+    </div>
+    <div class="hero-card">
+      <div class="label"><span class="pl">Lot powrotny</span><span class="en">Return flight</span></div>
+      <div class="value">19:45 → 23:30</div>
+      <div class="sub"><span class="pl">AGP → Kraków KRK · czw 14.08</span><span class="en">AGP → Kraków KRK · Thu 14 Aug</span></div>
+    </div>
+    <div class="hero-card">
+      <div class="label"><span class="pl">Baza</span><span class="en">Base</span></div>
+      <div class="value">Airbnb · Soho</div>
+      <div class="sub">Calle Tomás Heredia 9, 29001</div>
+    </div>
+    <div class="hero-card">
+      <div class="label"><span class="pl">Dojazd z lotniska</span><span class="en">Airport link</span></div>
+      <div class="value">Cercanías C1</div>
+      <div class="sub"><span class="pl">co 20 min · ~12 min do Centro-Alameda</span><span class="en">every 20 min · ~12 min to Centro-Alameda</span></div>
+    </div>
+    <div class="hero-card">
+      <div class="label">Caminito del Rey</div>
+      <div class="value"><span class="pl">Śr 13.08 · 11:30</span><span class="en">Wed 13 Aug · 11:30</span></div>
+      <div class="sub"><span class="pl">pociąg 9:40 z Centro-Alameda</span><span class="en">train 9:40 from Centro-Alameda</span></div>
+    </div>
+    <div class="hero-card">
+      <div class="label"><span class="pl">Pogoda</span><span class="en">Weather</span></div>
+      <div class="value">☀ Costa del Sol</div>
+      <div class="sub"><span class="pl">sprawdź prognozę przed wylotem</span><span class="en">check forecast before departure</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     MAP SECTION
+════════════════════════════════════════════════ -->
+<section class="map-section" id="map">
+<div class="container">
+  <div class="section-header">
+    <div class="section-number" style="font-size:2rem;opacity:0.3;">◎</div>
+    <div class="section-header-text">
+      <div class="label"><span class="pl">Wszystkie kluczowe miejsca</span><span class="en">All key locations</span></div>
+      <h2><span class="pl">Mapa i lokalizacje</span><span class="en">Map & locations</span></h2>
+    </div>
+  </div>
+
+  <!-- TODO: paste Google My Maps embed here, same as Stockholm page:
+       <div class="map-embed-wrap">
+         <iframe src="https://www.google.com/maps/d/embed?mid=YOUR_MAP_ID"></iframe>
+       </div>
+  -->
+  <div class="map-placeholder">
+    <span class="pl">🔗 Tu wklej osadzoną mapę Google My Maps ze wszystkimi pinezkami (jak dla Sztokholmu) — podeślij mi link, a ja ją podepnę.</span>
+    <span class="en">🔗 Paste the Google My Maps embed with all pins here (like the Stockholm one) — send me the link and I'll wire it up.</span>
+  </div>
+
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — ARRIVING
+════════════════════════════════════════════════ -->
+<section id="arriving">
+<div class="container">
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <div class="section-header-text">
+      <div class="label"><span class="pl">Niedziela 10 sierpnia · przylot AGP</span><span class="en">Sunday 10 August · AGP arrival</span></div>
+      <h2><span class="pl">Z lotniska do Airbnb</span><span class="en">From the airport to the Airbnb</span></h2>
+    </div>
+  </div>
+
+  <div class="tbd-box">
+    <strong>✈ TBC:</strong> <span class="pl">wklej numer lotu i godziny przylotu do Malagi — uzupełnię pasek lotu jak dla Sztokholmu.</span><span class="en">paste the outbound flight number and arrival time — I'll fill in the flight strip like on the Stockholm page.</span>
+  </div>
+
+  <div class="transport-option recommended">
+    <div class="transport-header">
+      <h4><span class="pl">Cercanías C1 — podmiejska kolejka prosto do centrum</span><span class="en">Cercanías C1 — suburban train straight into the centre</span></h4>
+      <span class="recommended-label"><span class="pl">Jedyna sensowna opcja</span><span class="en">The way to go</span></span>
+    </div>
+    <div class="transport-body">
+      <ul class="transport-steps">
+        <li><div class="step-circle">1</div><div><span class="pl">Z hali przylotów idźcie za znakami <strong>„Tren / Cercanías"</strong> — stacja <strong>Aeropuerto</strong> jest połączona kładką z terminalem T3, ~5 min pieszo.</span><span class="en">From arrivals follow the <strong>"Tren / Cercanías"</strong> signs — the <strong>Aeropuerto</strong> station is linked to Terminal 3 by a footbridge, ~5 min walk.</span></div></li>
+        <li><div class="step-circle">2</div><div><span class="pl">Kupcie bilet w automacie (~2 € / os.) i wsiądźcie w <strong>linię C1 w kierunku Málaga Centro-Alameda</strong>. Pociągi co 20 minut.</span><span class="en">Buy a ticket at the machine (~€2 pp) and board <strong>line C1 towards Málaga Centro-Alameda</strong>. Trains every 20 minutes.</span></div></li>
+        <li><div class="step-circle">3</div><div><span class="pl">Jedziecie do <strong>stacji końcowej — Málaga Centro-Alameda</strong> (~12 min, 2 przystanki za María Zambrano).</span><span class="en">Ride to the <strong>final stop — Málaga Centro-Alameda</strong> (~12 min).</span></div></li>
+        <li><div class="step-circle">4</div><div><span class="pl">Ze stacji <strong>5 minut pieszo</strong> do Airbnb: przechodzicie na południową stronę Alamedy i skręcacie w dzielnicę Soho — <strong>Calle Tomás Heredia 9</strong>.</span><span class="en">From the station it's a <strong>5-minute walk</strong> to the Airbnb: cross to the south side of the Alameda into the Soho district — <strong>Calle Tomás Heredia 9</strong>.</span></div></li>
+      </ul>
+      <div class="transport-meta"><span class="pl">Łącznie: ~30–40 min od wyjścia z samolotu · ~4 € za dwoje. C1 kursuje mniej więcej 05:40–00:50, więc działa też przy wieczornym przylocie.</span><span class="en">Total: ~30–40 min from stepping off the plane · ~€4 for two. The C1 runs roughly 05:40–00:50, so it works for a late arrival too.</span></div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>Soho</strong> — <span class="pl">wasza dzielnica to „dzielnica sztuki" Malagi: wielkoformatowe murale, galerie i knajpy między centrum a portem. Do głównego deptaka (Calle Larios) macie ~8 min pieszo, do portu (Muelle Uno) ~10 min, na plażę Malagueta ~20 min. Wszystko w tym planie jest w zasięgu spaceru.</span><span class="en">your neighbourhood is Málaga's arts district: large-scale murals, galleries and bars squeezed between the old town and the port. Calle Larios is ~8 min on foot, the port (Muelle Uno) ~10 min, Malagueta beach ~20 min. Everything in this plan is walkable.</span>
+  </div>
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — SUNDAY
+════════════════════════════════════════════════ -->
+<section id="sunday">
+<div class="container">
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <div class="section-header-text">
+      <div class="label"><span class="pl">Niedziela 10 sierpnia · dzień przyjazdu</span><span class="en">Sunday 10 August · arrival day</span></div>
+      <h2><span class="pl">Zakwaterowanie i pierwsza kolacja</span><span class="en">Settle in & first dinner</span></h2>
+    </div>
+  </div>
+  <div class="terra-line"></div>
+
+  <p style="margin-bottom:2rem;font-size:0.95rem;"><span class="pl">Bez planu na sztywno — rozpakujcie się, przejdźcie się po Soho i wybierzcie kolację z krótkiej listy poniżej. Wszystkie miejsca są <strong>kilka minut pieszo od mieszkania</strong>. Uwaga: w niedzielę wiele lokali w Hiszpanii jest zamkniętych lub kończy wcześniej — warto sprawdzić godziny w Google Maps przed wyjściem.</span><span class="en">Nothing scheduled — unpack, wander around Soho and pick dinner from the shortlist below. Everything is <strong>a few minutes' walk from the apartment</strong>. Note: on Sundays many places in Spain close or finish early — double-check opening hours on Google Maps before heading out.</span></p>
+
+  <div class="food-grid">
+    <div class="food-card">
+      <div class="food-name">Niña Bonita Cantina 🌮</div>
+      <div class="food-location"><span class="pl">Meksykańska · Soho, tuż przy mieszkaniu</span><span class="en">Mexican · Soho, right by the apartment</span></div>
+      <div class="food-desc"><span class="pl">Kolorowa cantina z tacos, quesadillami i margaritami.</span><span class="en">Colourful cantina with tacos, quesadillas and margaritas.</span> <a class="maps" href="https://maps.app.goo.gl/xinhb1TnwJZZDvuo7" target="_blank" rel="noopener">Maps</a></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Meet Vegano 🌱</div>
+      <div class="food-location"><span class="pl">Wegańska · Soho</span><span class="en">Vegan · Soho</span></div>
+      <div class="food-desc"><span class="pl">W pełni wegańska knajpka — burgery, bowle, domowe desery.</span><span class="en">Fully vegan spot — burgers, bowls, homemade desserts.</span> <a class="maps" href="https://maps.app.goo.gl/vCGpKa6Voe1hpLWcA" target="_blank" rel="noopener">Maps</a></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Mesón Ibérico 🥘</div>
+      <div class="food-location"><span class="pl">Tapas · klasyka, okolice Soho</span><span class="en">Tapas · a classic, near Soho</span></div>
+      <div class="food-desc"><span class="pl">Tradycyjny mesón: jamón, tapas, lokalny gwar. Najbardziej „hiszpańska" opcja na pierwszy wieczór.</span><span class="en">Traditional mesón: jamón, tapas, local buzz. The most "Spanish" option for night one.</span> <a class="maps" href="https://maps.app.goo.gl/YasS85QyiTSXViQa8" target="_blank" rel="noopener">Maps</a></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Las Muns 🥟</div>
+      <div class="food-location"><span class="pl">Empanadas · szybka opcja</span><span class="en">Empanadas · quick bite</span></div>
+      <div class="food-desc"><span class="pl">Rzemieślnicze empanadas — idealne, jeśli po podróży chcecie tylko coś szybkiego.</span><span class="en">Artisan empanadas — perfect if you just want something quick after travelling.</span> <a class="maps" href="https://maps.app.goo.gl/nRxdNbjJaJKKSCaKA" target="_blank" rel="noopener">Maps</a></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Despecha Taberna 🌯</div>
+      <div class="food-location"><span class="pl">Tacos · Soho</span><span class="en">Tacos · Soho</span></div>
+      <div class="food-desc"><span class="pl">Taberna z tacos i luźnym klimatem — druga meksykańska opcja, bliżej ulicznego stylu.</span><span class="en">Taco taberna with a laid-back vibe — the second Mexican option, more street-style.</span> <a class="maps" href="https://maps.app.goo.gl/LsCVPzHcByChQjZc7" target="_blank" rel="noopener">Maps</a></div>
+    </div>
+  </div>
+
+  <div class="badge-row" style="margin-top:1rem;">
+    <span class="badge badge-olive"><span class="pl">Wszystko blisko mieszkania</span><span class="en">All close to the apartment</span></span>
+    <span class="badge badge-saffron"><span class="pl">Niedziela — sprawdź godziny otwarcia</span><span class="en">Sunday — check opening hours</span></span>
+  </div>
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 — MONDAY
+════════════════════════════════════════════════ -->
+<section id="monday">
+<div class="container">
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <div class="section-header-text">
+      <div class="label"><span class="pl">Poniedziałek 11 sierpnia · dzień pełny</span><span class="en">Monday 11 August · full day</span></div>
+      <h2><span class="pl">Picasso, katedra i twierdza</span><span class="en">Picasso, the cathedral & the fortress</span></h2>
+    </div>
+  </div>
+  <div class="terra-line"></div>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">9:00</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Śniadanie</span><span class="en">Breakfast</span></h4>
+        <p><span class="pl">Na spokojnie, w okolicy Soho / centrum. Dobre typy do rozważenia: <strong>Julia Bakery</strong> (Soho — croissanty i wypieki), <strong>La Bella Julieta</strong> albo klasyczne hiszpańskie <em>tostada con tomate y aceite</em> w dowolnym barze — z kawą za kilka euro.</span><span class="en">Take it easy, somewhere around Soho / the centre. Good candidates: <strong>Julia Bakery</strong> (Soho — croissants and pastries), <strong>La Bella Julieta</strong>, or a classic Spanish <em>tostada con tomate y aceite</em> at any bar — with coffee for a few euros.</span></p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot accent"></div>
+        <div class="timeline-time">10:00</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Muzeum Picassa</span><span class="en">Picasso Museum</span></h4>
+        <p><span class="pl">Picasso urodził się w Maladze — muzeum w Palacio de Buenavista pokazuje ponad 200 prac z rodzinnej kolekcji. <strong>Kupcie bilety online z wyprzedzeniem</strong> na konkretną godzinę (~12 €/os.), kolejki na miejscu potrafią być długie. Zwiedzanie: 1,5–2 h.</span><span class="en">Picasso was born in Málaga — the museum in the Palacio de Buenavista shows 200+ works from the family collection. <strong>Book timed tickets online in advance</strong> (~€12 pp), the walk-up queue can be long. Allow 1.5–2 h.</span> <a class="maps" href="https://maps.app.goo.gl/nUGcPoyNGRn6tMQr9" target="_blank" rel="noopener">Maps</a></p>
+        <div class="badge-row"><span class="badge badge-red"><span class="pl">Zarezerwuj bilety online</span><span class="en">Book tickets online</span></span><span class="badge badge-azul"><span class="pl">~15 min pieszo z mieszkania</span><span class="en">~15 min walk from the apartment</span></span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">12:15</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Spacer po starówce — katedra i teatr rzymski</span><span class="en">Old-town walk — cathedral & Roman theatre</span></h4>
+        <p><span class="pl"><strong>Katedra w Maladze</strong> (<a class="maps" href="https://maps.app.goo.gl/GpbRVoi6JDVrT4dB9" target="_blank" rel="noopener">Maps</a>) — „La Manquita", czyli „Jednoręka": druga wieża nigdy nie została ukończona. Warto wejść do środka (~10 €), a przy dobrej pogodzie zajrzeć na dach. Potem 3 minuty do <strong>Teatru Rzymskiego</strong> (<a class="maps" href="https://maps.app.goo.gl/xUopUTCPfsiYL9Jh7" target="_blank" rel="noopener">Maps</a>) — teatr z I w. p.n.e. u stóp Alcazaby, świetnie widoczny z ulicy, wstęp wolny.</span><span class="en"><strong>Málaga Cathedral</strong> (<a class="maps" href="https://maps.app.goo.gl/GpbRVoi6JDVrT4dB9" target="_blank" rel="noopener">Maps</a>) — "La Manquita", "the one-armed lady": the second tower was never finished. The interior is worth it (~€10), and the rooftop visit is great in good weather. Then 3 minutes to the <strong>Roman Theatre</strong> (<a class="maps" href="https://maps.app.goo.gl/xUopUTCPfsiYL9Jh7" target="_blank" rel="noopener">Maps</a>) — a 1st-century-BC theatre at the foot of the Alcazaba, fully visible from the street, free.</span></p>
+        <div class="badge-row"><span class="badge badge-olive"><span class="pl">Teatr — za darmo</span><span class="en">Theatre — free</span></span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot accent"></div>
+        <div class="timeline-time">14:00</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Alcazaba — zwiedzanie twierdzy</span><span class="en">Alcazaba — the fortress tour</span></h4>
+        <p><span class="pl">Mauretańska twierdza z XI wieku wznosząca się nad teatrem — patia, fontanny, ogrody i coraz lepsze widoki na miasto i port z każdym poziomem. Bilet ~3,50 € (łączony z zamkiem Gibralfaro ~5,50 €). Zwiedzanie ~1,5 h.</span><span class="en">An 11th-century Moorish fortress rising above the theatre — patios, fountains, gardens, and better views over the city and port with every level. Ticket ~€3.50 (combined with Gibralfaro castle ~€5.50). Allow ~1.5 h.</span> <a class="maps" href="https://maps.app.goo.gl/QBMGcGVdFnfLd39m7" target="_blank" rel="noopener">Maps</a></p>
+        <div class="badge-row"><span class="badge badge-terra"><span class="pl">Najważniejszy zabytek Malagi</span><span class="en">Málaga's top monument</span></span><span class="badge badge-saffron"><span class="pl">Bilet łączony z Gibralfaro</span><span class="en">Combined ticket with Gibralfaro</span></span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">16:00</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Rozwidlenie — wybierzcie według sił</span><span class="en">Fork in the road — pick by energy level</span></h4>
+        <p><span class="pl"><strong>Opcja A — zamek Gibralfaro:</strong> jeśli są jeszcze siły, podejście ~20–30 min serpentyną nad Alcazabą (albo autobus 35) do zamku i <strong>punktu widokowego Gibralfaro</strong> — najlepsza panorama miasta, portu i areny korridy.</span><span class="en"><strong>Option A — Gibralfaro castle:</strong> if you've still got legs, it's a ~20–30 min switchback climb above the Alcazaba (or bus 35) to the castle and the <strong>Gibralfaro viewpoint</strong> — the best panorama of the city, port and bullring.</span> <a class="maps" href="https://maps.app.goo.gl/Z4K6FcCJArxEH6dGA" target="_blank" rel="noopener">Maps</a></p>
+        <p style="margin-top:0.5rem;"><span class="pl"><strong>Opcja B — chillout na plaży:</strong> jeśli nie — schodzicie na <strong>Malaguetę</strong> przez Muelle Uno, a po drodze pizza w <strong>Pizzeria Italiana Vittoria</strong>.</span><span class="en"><strong>Option B — beach chill:</strong> if not — head down to <strong>Malagueta beach</strong> via Muelle Uno, grabbing pizza on the way at <strong>Pizzeria Italiana Vittoria</strong>.</span> <a class="maps" href="https://maps.app.goo.gl/PZRGtqk9Rxd36Z9t8" target="_blank" rel="noopener">Maps</a></p>
+        <div class="badge-row"><span class="badge badge-azul"><span class="pl">A: najlepszy widok w mieście</span><span class="en">A: best view in town</span></span><span class="badge badge-olive"><span class="pl">B: pizza + plaża</span><span class="en">B: pizza + beach</span></span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">18:30</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Dwa zadania na wieczór — przygotowanie reszty tygodnia</span><span class="en">Two errands for the evening — set up the rest of the week</span></h4>
+        <p><span class="pl"><strong>1. Przechowalnia bagażu:</strong> zajrzyjcie do <strong>Ebike Málaga</strong> (2 min od mieszkania) i potwierdźcie, że w czwartek można u nich zostawić walizki — godziny, cena, do której otwarte.</span><span class="en"><strong>1. Luggage storage:</strong> drop by <strong>Ebike Málaga</strong> (2 min from the apartment) and confirm you can leave the suitcases there on Thursday — hours, price, closing time.</span> <a class="maps" href="https://maps.app.goo.gl/obcLcBN3wJiFrw8P6" target="_blank" rel="noopener">Maps</a></p>
+        <p style="margin-top:0.5rem;"><span class="pl"><strong>2. Rejsy z portu:</strong> spacer po <strong>Muelle Uno</strong> — sprawdźcie ceny rejsów katamaranem na jutro (zwykle ~15–25 €/os., godzinny rejs po zatoce; wieczorem opcja „sunset"). Kupcie bilety na wtorek, jeśli cena pasuje.</span><span class="en"><strong>2. Port boat trips:</strong> stroll along <strong>Muelle Uno</strong> — check catamaran cruise prices for tomorrow (usually ~€15–25 pp for an hour in the bay; there's a sunset option too). Buy Tuesday tickets if the price looks right.</span></p>
+        <div class="badge-row"><span class="badge badge-saffron"><span class="pl">Ważne dla czwartku i wtorku</span><span class="en">Sets up Tuesday & Thursday</span></span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot accent"></div>
+        <div class="timeline-time">20:30</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Kolacja</span><span class="en">Dinner</span></h4>
+        <p><span class="pl">Cokolwiek z niedzielnej listy, czego jeszcze nie było — w poniedziałek wszystko powinno być już otwarte. Hiszpanie jedzą późno: przed 20:30 restauracje bywają puste, i to jest OK.</span><span class="en">Anything from the Sunday shortlist you haven't tried yet — everything should be open on a Monday. Spaniards eat late: restaurants can be empty before 8:30pm, and that's normal.</span></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 4 — TUESDAY
+════════════════════════════════════════════════ -->
+<section id="tuesday">
+<div class="container">
+  <div class="section-header">
+    <div class="section-number">04</div>
+    <div class="section-header-text">
+      <div class="label"><span class="pl">Wtorek 12 sierpnia · targ, morze i plaża</span><span class="en">Tuesday 12 August · market, sea & beach</span></div>
+      <h2><span class="pl">Atarazanas, rejs i plażing-smażing</span><span class="en">Atarazanas, a boat trip & full beach mode</span></h2>
+    </div>
+  </div>
+  <div class="terra-line"></div>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">9:00</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Śniadanie</span><span class="en">Breakfast</span></h4>
+        <p><span class="pl">Jak w poniedziałek — albo od razu na targu (patrz niżej): świeży sok, owoce i coś z pieca.</span><span class="en">Same as Monday — or go straight to the market (below): fresh juice, fruit and something baked.</span></p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot accent"></div>
+        <div class="timeline-time">10:00</div>
+      </div>
+      <div class="timeline-content">
+        <h4>Mercado de Atarazanas</h4>
+        <p><span class="pl">Główny targ Malagi w XIX-wiecznej hali z mauretańską bramą i wielkim witrażem — owoce morza, jamón, oliwki, owoce, migdały. Najlepszy przed południem, kiedy tętni życiem (zamykają ok. 14:00, w niedziele nieczynny — dlatego jest we wtorek). Przy barach w środku można wziąć tapas z targowych produktów.</span><span class="en">Málaga's main market in a 19th-century hall with a Moorish gate and a huge stained-glass window — seafood, jamón, olives, fruit, almonds. Best before noon when it's buzzing (closes ~2pm, shut on Sundays — which is why it's on Tuesday). The bars inside serve tapas made from market produce.</span> <a class="maps" href="https://maps.app.goo.gl/MwmvjJyWWYFdr6aU9" target="_blank" rel="noopener">Maps</a></p>
+        <div class="badge-row"><span class="badge badge-terra"><span class="pl">Idź przed południem</span><span class="en">Go before noon</span></span><span class="badge badge-azul"><span class="pl">5 min od mieszkania</span><span class="en">5 min from the apartment</span></span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot accent"></div>
+        <div class="timeline-time">12:30</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Rejs po zatoce</span><span class="en">Boat trip on the bay</span></h4>
+        <p><span class="pl">Rejs kupiony (albo wybrany) w poniedziałek wieczorem — katamarany wypływają z Muelle Uno, zwykle ok. godziny na wodzie z widokiem na miasto, twierdzę i wybrzeże. Weźcie wodę i krem z filtrem — na pokładzie cienia jest niewiele.</span><span class="en">The cruise you scoped out (or bought) on Monday evening — catamarans leave from Muelle Uno, usually about an hour on the water with views of the city, fortress and coastline. Bring water and sunscreen — there's little shade on deck.</span></p>
+        <div class="badge-row"><span class="badge badge-azul"><span class="pl">Z Muelle Uno</span><span class="en">From Muelle Uno</span></span><span class="badge badge-saffron">~15–25 €/os.</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">14:30</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Plażing i smażing — Malagueta</span><span class="en">Beach & sizzle — Malagueta</span></h4>
+        <p><span class="pl">Reszta dnia na plaży Malagueta, 10 min od portu. Obowiązkowo lunch w chiringuito (barze plażowym): <strong>espeto de sardinas</strong> — sardynki z rusztu opiekane nad ogniem w łódce z piaskiem, znak firmowy Malagi — plus <em>pescaíto frito</em>, czyli smażone owoce morza. Do tego tinto de verano i już nigdzie się nie idzie.</span><span class="en">The rest of the day on Malagueta beach, 10 min from the port. Mandatory chiringuito (beach bar) lunch: <strong>espeto de sardinas</strong> — sardines grilled on skewers over an open fire in a sand-filled boat, Málaga's signature dish — plus <em>pescaíto frito</em>, fried seafood. Add a tinto de verano and you're not going anywhere.</span></p>
+        <div class="badge-row"><span class="badge badge-terra"><span class="pl">Espeto — spécialité Malagi</span><span class="en">Espeto — Málaga's speciality</span></span><span class="badge badge-olive"><span class="pl">Zero planu do końca dnia</span><span class="en">Zero plans for the rest of the day</span></span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">21:00</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Wieczór — wcześniej do łóżka</span><span class="en">Evening — earlyish night</span></h4>
+        <p><span class="pl">Lekka kolacja i pakowanie plecaka na jutro: <strong>woda (min. 1,5 l/os.), przekąski, czapki, krem, wygodne buty</strong>. Jutro pociąg 9:40 i Caminito del Rey.</span><span class="en">Light dinner and pack the daypack for tomorrow: <strong>water (min. 1.5 l pp), snacks, hats, sunscreen, comfortable shoes</strong>. Tomorrow it's the 9:40 train and the Caminito del Rey.</span></p>
+        <div class="badge-row"><span class="badge badge-red"><span class="pl">Jutro wczesna pobudka</span><span class="en">Early start tomorrow</span></span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 5 — WEDNESDAY / CAMINITO
+════════════════════════════════════════════════ -->
+<section id="wednesday">
+<div class="container">
+  <div class="section-header">
+    <div class="section-number">05</div>
+    <div class="section-header-text">
+      <div class="label"><span class="pl">Środa 13 sierpnia · wycieczka całodniowa</span><span class="en">Wednesday 13 August · full-day trip</span></div>
+      <h2>Caminito del Rey</h2>
+    </div>
+  </div>
+  <div class="terra-line"></div>
+
+  <p style="margin-bottom:1.5rem;font-size:0.95rem;"><span class="pl">„Królewska ścieżka" — kładki zawieszone 100 metrów nad wąwozem El Chorro, kiedyś „najniebezpieczniejszy szlak świata", dziś w pełni zabezpieczony i spektakularny. Trasa ~7,7 km w jedną stronę (w tym ~3 km kładek), idzie się 3–4 h, tylko w jednym kierunku: północ → południe.</span><span class="en">"The King's Path" — walkways pinned 100 metres above the El Chorro gorge, once "the world's most dangerous trail", now fully rebuilt and spectacular. The route is ~7.7 km one-way (~3 km of boardwalks), takes 3–4 h, and runs one direction only: north → south.</span></p>
+
+  <div class="warn-box">
+    <strong>⚠ <span class="pl">Bilety:</span><span class="en">Tickets:</span></strong> <span class="pl">wejście na 11:30 musi być zarezerwowane z wyprzedzeniem na <a class="maps" href="https://www.caminitodelrey.info/en" target="_blank" rel="noopener" style="color:inherit;">caminitodelrey.info</a> (~10 €/os. bez przewodnika, ~18 € z przewodnikiem). Kask obowiązkowy (dają na miejscu). Weźcie bilety w telefonie + dokumenty.</span><span class="en">the 11:30 entry must be booked in advance at <a class="maps" href="https://www.caminitodelrey.info/en" target="_blank" rel="noopener" style="color:inherit;">caminitodelrey.info</a> (~€10 pp unguided, ~€18 guided). Helmets are mandatory (provided on site). Have the tickets on your phone + ID.</span>
+  </div>
+
+  <div class="alarm-sequence">
+    <div class="alarm-row">
+      <div class="alarm-time">9:15</div>
+      <div class="alarm-text"><span class="pl"><strong>Na stacji Málaga Centro-Alameda.</strong> Bilety na pociąg do El Chorro najlepiej kupić wcześniej na <a class="maps" href="https://www.renfe.com/es/en" target="_blank" rel="noopener">renfe.com</a> — miejsca bywają wyprzedane.</span><span class="en"><strong>At Málaga Centro-Alameda station.</strong> Best to buy the El Chorro train tickets in advance at <a class="maps" href="https://www.renfe.com/es/en" target="_blank" rel="noopener">renfe.com</a> — seats do sell out.</span></div>
+    </div>
+    <div class="alarm-row">
+      <div class="alarm-time">9:40</div>
+      <div class="alarm-text"><span class="pl"><strong>Pociąg do El Chorro</strong> (~40–45 min przez góry — siądźcie po lewej stronie, widoki).</span><span class="en"><strong>Train to El Chorro</strong> (~40–45 min through the mountains — sit on the left for the views).</span></div>
+    </div>
+    <div class="alarm-row">
+      <div class="alarm-time">~10:30</div>
+      <div class="alarm-text"><span class="pl"><strong>El Chorro → shuttle bus</strong> pod wejście północne (~2,50 €/os., ~20 min). Potem jeszcze ~20 min pieszo od przystanku do bramki kontrolnej.</span><span class="en"><strong>El Chorro → shuttle bus</strong> to the northern entrance (~€2.50 pp, ~20 min). Then another ~20 min on foot from the bus stop to the control gate.</span></div>
+    </div>
+    <div class="alarm-row highlight">
+      <div class="alarm-time">11:30</div>
+      <div class="alarm-text"><span class="pl"><strong>Start trasy.</strong> 3–4 h przez wąwóz — najlepszy moment: szklana platforma i wiszący most na końcu. Trasa kończy się przy południowym wyjściu, skąd schodzicie z powrotem do stacji El Chorro.</span><span class="en"><strong>Route starts.</strong> 3–4 h through the gorge — the glass platform and hanging bridge near the end are the highlight. The route finishes at the southern exit, from which you walk back down to El Chorro station.</span></div>
+    </div>
+    <div class="alarm-row">
+      <div class="alarm-time">~16:00</div>
+      <div class="alarm-text"><span class="pl"><strong>Z powrotem w El Chorro.</strong> Piwo/cola przy stacji i sprawdźcie godziny powrotów — bierzecie, co jest. Według <a class="maps" href="https://www.renfe.com/es/en" target="_blank" rel="noopener">renfe.com</a> pewny pociąg jest ok. <strong>19:00</strong>.</span><span class="en"><strong>Back at El Chorro.</strong> Beer/coke by the station and check the return times — take whatever runs. Per <a class="maps" href="https://www.renfe.com/es/en" target="_blank" rel="noopener">renfe.com</a> there's a reliable train around <strong>7pm</strong>.</span></div>
+    </div>
+    <div class="alarm-row highlight">
+      <div class="alarm-time">~19:45</div>
+      <div class="alarm-text"><span class="pl"><strong>Z powrotem w Maladze.</strong> Późna kolacja — zasłużona.</span><span class="en"><strong>Back in Málaga.</strong> A late dinner — earned.</span></div>
+    </div>
+  </div>
+
+  <div style="height:1.5rem"></div>
+  <div class="info-box">
+    <span class="pl"><strong>Na trasie nie ma wody, jedzenia ani toalet</strong> — wszystko trzeba mieć ze sobą. Trasa jest łatwa technicznie (to spacer, nie wspinaczka), ale słońce potrafi dać w kość. Dzieci poniżej 8 lat nie wchodzą.</span><span class="en"><strong>There's no water, food or toilets on the route</strong> — carry everything. It's technically easy (a walk, not a climb), but the sun can be brutal. Children under 8 are not allowed.</span>
+  </div>
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 6 — THURSDAY / DEPARTURE
+════════════════════════════════════════════════ -->
+<section id="thursday">
+<div class="container">
+  <div class="section-header">
+    <div class="section-number">06</div>
+    <div class="section-header-text">
+      <div class="label"><span class="pl">Czwartek 14 sierpnia · wylot 19:45</span><span class="en">Thursday 14 August · 19:45 departure</span></div>
+      <h2><span class="pl">Ostatnie churros i powrót</span><span class="en">Last churros & the flight home</span></h2>
+    </div>
+  </div>
+  <div class="terra-line"></div>
+
+  <!-- Return flight -->
+  <div class="flight-strip">
+    <div>
+      <div class="flight-time">19:45</div>
+      <div class="flight-city">Málaga AGP</div>
+    </div>
+    <div class="flight-line">
+      <div class="flight-meta"><span class="pl">nr lotu TBC · ~3 h 45 min</span><span class="en">flight no. TBC · ~3 h 45 min</span></div>
+      <div class="flight-line-bar"></div>
+      <div class="flight-meta">&nbsp;</div>
+    </div>
+    <div style="text-align:right">
+      <div class="flight-time">23:30</div>
+      <div class="flight-city">Kraków KRK</div>
+    </div>
+    <div class="badge-row"><span class="badge badge-terra"><span class="pl">Czwartek 14 sierpnia, wieczór</span><span class="en">Thursday 14 August, evening</span></span><span class="badge tbd"><span class="pl">✈ nr lotu do wklejenia</span><span class="en">✈ flight no. to paste</span></span></div>
+  </div>
+
+  <div style="height:1.5rem"></div>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot accent"></div>
+        <div class="timeline-time">11:00</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Wymeldowanie i bagaż do przechowalni</span><span class="en">Check-out & luggage drop</span></h4>
+        <p><span class="pl">Check-out do 11:00. Walizki zostawiacie w <strong>Ebike Málaga</strong> — 2 min od mieszkania (potwierdzone w poniedziałek 😉).</span><span class="en">Check out by 11:00. Leave the suitcases at <strong>Ebike Málaga</strong> — 2 min from the apartment (confirmed on Monday 😉).</span> <a class="maps" href="https://maps.app.goo.gl/obcLcBN3wJiFrw8P6" target="_blank" rel="noopener">Maps</a></p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot accent"></div>
+        <div class="timeline-time">11:30</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Churroski 🥖 — Casa Aranda</span><span class="en">Churros time 🥖 — Casa Aranda</span></h4>
+        <p><span class="pl">Legendarna churrería działająca od 1932 roku, tuż przy targu Atarazanas — churros maczane w gęstej gorącej czekoladzie. Idealne „ostatnie śniadanie" przed wylotem.</span><span class="en">A legendary churrería running since 1932, right by the Atarazanas market — churros dunked in thick hot chocolate. The perfect "last breakfast" before flying home.</span> <a class="maps" href="https://maps.app.goo.gl/hesEfZT1ckezEGnPA" target="_blank" rel="noopener">Maps</a></p>
+        <div class="badge-row"><span class="badge badge-terra"><span class="pl">Instytucja od 1932</span><span class="en">An institution since 1932</span></span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">12:30</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">Hard Rock Cafe, pamiątki i ostatni spacer</span><span class="en">Hard Rock Cafe, souvenirs & a last wander</span></h4>
+        <p><span class="pl"><strong>Hard Rock Cafe Málaga</strong> (<a class="maps" href="https://maps.app.goo.gl/v5NraRC1YojuXoK99" target="_blank" rel="noopener">Maps</a>) po koszulkę do kolekcji, potem luźne godziny na starówce: Calle Larios, ostatnie zakupy (migdały, oliwa, wino słodkie Málaga Virgen), kawa na placu.</span><span class="en"><strong>Hard Rock Cafe Málaga</strong> (<a class="maps" href="https://maps.app.goo.gl/v5NraRC1YojuXoK99" target="_blank" rel="noopener">Maps</a>) for the collection tee, then loose hours in the old town: Calle Larios, last souvenirs (almonds, olive oil, sweet Málaga wine), coffee on a square.</span></p>
+        <div class="badge-row"><span class="badge badge-azul"><span class="pl">Przy porcie · 12 min pieszo</span><span class="en">By the port · 12 min walk</span></span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="departure-critical">
+    <div class="label"><span class="pl">Kluczowe godziny</span><span class="en">Critical timing</span></div>
+    <p><span class="pl">Wylot 19:45 — na lotnisku bądźcie ok. 17:30 (2 h wcześniej). Cercanías C1 z Centro-Alameda w stronę Fuengiroli jedzie na lotnisko ~12 min, co 20 minut.</span><span class="en">Departure 19:45 — be at the airport by ~17:30 (2 h before). The Cercanías C1 from Centro-Alameda towards Fuengirola reaches the airport in ~12 min, every 20 minutes.</span></p>
+  </div>
+
+  <div class="alarm-sequence">
+    <div class="alarm-row">
+      <div class="alarm-time">16:30</div>
+      <div class="alarm-text"><span class="pl"><strong>Odbiór walizek</strong> z Ebike Málaga.</span><span class="en"><strong>Collect the suitcases</strong> from Ebike Málaga.</span></div>
+    </div>
+    <div class="alarm-row">
+      <div class="alarm-time">17:00</div>
+      <div class="alarm-text"><span class="pl"><strong>Pociąg C1 z Centro-Alameda</strong> kierunek Fuengirola → stacja Aeropuerto (~12 min).</span><span class="en"><strong>C1 train from Centro-Alameda</strong> towards Fuengirola → Aeropuerto station (~12 min).</span></div>
+    </div>
+    <div class="alarm-row highlight">
+      <div class="alarm-time">17:30</div>
+      <div class="alarm-text"><span class="pl"><strong>Na lotnisku.</strong> Nadanie bagażu, kontrola, gate.</span><span class="en"><strong>At the airport.</strong> Bag drop, security, gate.</span></div>
+    </div>
+    <div class="alarm-row highlight">
+      <div class="alarm-time">19:45</div>
+      <div class="alarm-text"><span class="pl"><strong>Wylot.</strong> ✈ Kraków 23:30. ¡Hasta luego, Málaga!</span><span class="en"><strong>Departure.</strong> ✈ Kraków 23:30. ¡Hasta luego, Málaga!</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 7 — FOOD
+════════════════════════════════════════════════ -->
+<section id="food">
+<div class="container">
+  <div class="section-header">
+    <div class="section-number">07</div>
+    <div class="section-header-text">
+      <div class="label"><span class="pl">Przewodnik kulinarny</span><span class="en">Food & drink guide</span></div>
+      <h2><span class="pl">Gdzie jeść i pić</span><span class="en">Where to eat & drink</span></h2>
+    </div>
+  </div>
+  <div class="terra-line"></div>
+
+  <h3 style="font-size:1rem;font-family:'Karla',sans-serif;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:1rem;"><span class="pl">Klasyki Malagi</span><span class="en">Málaga classics</span></h3>
+  <div class="food-grid" style="margin-bottom:2.5rem;">
+    <div class="food-card featured">
+      <div class="food-name">Casa Aranda ★ <span class="pl">Churros — obowiązkowo</span><span class="en">Churros — non-negotiable</span></div>
+      <div class="food-location"><span class="pl">Przy targu Atarazanas · od 1932</span><span class="en">By Atarazanas market · since 1932</span> · <a class="maps" href="https://maps.app.goo.gl/hesEfZT1ckezEGnPA" target="_blank" rel="noopener">Maps</a></div>
+      <div class="food-desc"><span class="pl">Zajmuje pół uliczki, kelnerzy w białych koszulach liczą zamówienia na pamięć. Churros + gęsta czekolada do maczania. Zaplanowane na czwartek, ale nikt nie zabroni pójść wcześniej.</span><span class="en">It takes over half an alley, and white-shirted waiters keep tabs in their heads. Churros + thick dipping chocolate. Planned for Thursday, but nobody says you can't go earlier.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Mercado de Atarazanas</div>
+      <div class="food-location"><span class="pl">Targ + bary tapas · zamknięty w niedziele</span><span class="en">Market + tapas bars · closed Sundays</span> · <a class="maps" href="https://maps.app.goo.gl/MwmvjJyWWYFdr6aU9" target="_blank" rel="noopener">Maps</a></div>
+      <div class="food-desc"><span class="pl">Wtorkowy przystanek — świeże owoce morza i tapas przy barach w hali.</span><span class="en">Tuesday's stop — fresh seafood and tapas at the bars inside the hall.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name"><span class="pl">Chiringuitos na Malaguecie</span><span class="en">Chiringuitos on Malagueta</span></div>
+      <div class="food-location"><span class="pl">Bary plażowe · espeto</span><span class="en">Beach bars · espeto</span></div>
+      <div class="food-desc"><span class="pl">Espeto de sardinas z ognia + pescaíto frito + tinto de verano. Esencja Malagi w jednej plastikowej krzesełkowej scenografii.</span><span class="en">Fire-grilled espeto de sardinas + pescaíto frito + tinto de verano. The essence of Málaga, plastic chairs included.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Pizzeria Italiana Vittoria</div>
+      <div class="food-location"><span class="pl">Pizza · po drodze na plażę</span><span class="en">Pizza · on the way to the beach</span> · <a class="maps" href="https://maps.app.goo.gl/PZRGtqk9Rxd36Z9t8" target="_blank" rel="noopener">Maps</a></div>
+      <div class="food-desc"><span class="pl">Plan awaryjny z poniedziałku: pizza na wynos i chill na Malaguecie.</span><span class="en">Monday's fallback plan: takeaway pizza and a Malagueta chill.</span></div>
+    </div>
+  </div>
+
+  <h3 style="font-size:1rem;font-family:'Karla',sans-serif;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:1rem;"><span class="pl">Kolacje — krótka lista (Soho)</span><span class="en">Dinner shortlist (Soho)</span></h3>
+  <div class="food-grid">
+    <div class="food-card">
+      <div class="food-name">Niña Bonita Cantina</div>
+      <div class="food-location"><span class="pl">Meksykańska</span><span class="en">Mexican</span> · <a class="maps" href="https://maps.app.goo.gl/xinhb1TnwJZZDvuo7" target="_blank" rel="noopener">Maps</a></div>
+      <div class="food-desc"><span class="pl">Tacos, quesadille, margarity.</span><span class="en">Tacos, quesadillas, margaritas.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Meet Vegano</div>
+      <div class="food-location"><span class="pl">Wegańska</span><span class="en">Vegan</span> · <a class="maps" href="https://maps.app.goo.gl/vCGpKa6Voe1hpLWcA" target="_blank" rel="noopener">Maps</a></div>
+      <div class="food-desc"><span class="pl">W pełni roślinnie — burgery, bowle, desery.</span><span class="en">Fully plant-based — burgers, bowls, desserts.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Mesón Ibérico</div>
+      <div class="food-location">Tapas · <a class="maps" href="https://maps.app.goo.gl/YasS85QyiTSXViQa8" target="_blank" rel="noopener">Maps</a></div>
+      <div class="food-desc"><span class="pl">Klasyczny mesón — jamón i tapas.</span><span class="en">Classic mesón — jamón and tapas.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Las Muns</div>
+      <div class="food-location">Empanadas · <a class="maps" href="https://maps.app.goo.gl/nRxdNbjJaJKKSCaKA" target="_blank" rel="noopener">Maps</a></div>
+      <div class="food-desc"><span class="pl">Szybkie i solidne empanadas.</span><span class="en">Quick, solid empanadas.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Despecha Taberna</div>
+      <div class="food-location">Tacos · <a class="maps" href="https://maps.app.goo.gl/LsCVPzHcByChQjZc7" target="_blank" rel="noopener">Maps</a></div>
+      <div class="food-desc"><span class="pl">Tacos w wydaniu tabernowym.</span><span class="en">Tacos, taberna-style.</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 8 — TIPS
+════════════════════════════════════════════════ -->
+<section id="tips">
+<div class="container">
+  <div class="section-header">
+    <div class="section-number">08</div>
+    <div class="section-header-text">
+      <div class="label"><span class="pl">Dobre, że wiesz</span><span class="en">Good to know</span></div>
+      <h2><span class="pl">Praktyczne wskazówki</span><span class="en">Practical tips</span></h2>
+    </div>
+  </div>
+  <div class="terra-line"></div>
+
+  <div class="tips-grid">
+    <div class="tip-item">
+      <div class="tip-icon">🕑</div>
+      <div>
+        <h4><span class="pl">Hiszpański rytm dnia</span><span class="en">The Spanish clock</span></h4>
+        <p><span class="pl">Lunch 14:00–16:00, kolacja od 20:30–21:00. Między 14:00 a 17:00 mniejsze sklepy bywają zamknięte (siesta). Kuchnie często nie działają ok. 17:00–20:00.</span><span class="en">Lunch 2–4pm, dinner from 8:30–9pm. Smaller shops may close 2–5pm (siesta). Kitchens are often shut ~5–8pm.</span></p>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-icon">💳</div>
+      <div>
+        <h4><span class="pl">Płatności</span><span class="en">Payments</span></h4>
+        <p><span class="pl">Karta działa niemal wszędzie, ale miejcie 20–30 € gotówki na chiringuito, targ i shuttle bus pod Caminito. Napiwki: zaokrąglenie lub ~5–10% za dobrą obsługę, bez presji.</span><span class="en">Cards work almost everywhere, but keep €20–30 cash for chiringuitos, the market and the Caminito shuttle bus. Tipping: round up or ~5–10% for good service, no pressure.</span></p>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-icon">🚆</div>
+      <div>
+        <h4>Cercanías</h4>
+        <p><span class="pl">Linia C1 (lotnisko ↔ Centro-Alameda ↔ Fuengirola) to wasz główny transport poza centrum. Bilety w automatach na stacji, kasowanie przy bramkach. W samym mieście — wszędzie pieszo.</span><span class="en">Line C1 (airport ↔ Centro-Alameda ↔ Fuengirola) is your main transport beyond the centre. Tickets from station machines, validate at the gates. Inside the city — walk everywhere.</span></p>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-icon">☀️</div>
+      <div>
+        <h4><span class="pl">Słońce</span><span class="en">Sun</span></h4>
+        <p><span class="pl">Krem z filtrem, czapki i woda — zwłaszcza na Caminito i rejs, gdzie cienia brak. Andaluzyjskie słońce nie bierze jeńców nawet poza sezonem.</span><span class="en">Sunscreen, hats and water — especially on the Caminito and the boat, where there's no shade. The Andalusian sun takes no prisoners even off-season.</span></p>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-icon">🗣️</div>
+      <div>
+        <h4><span class="pl">Kilka słów</span><span class="en">A few words</span></h4>
+        <p><span class="pl">„Hola", „gracias", „la cuenta, por favor" (rachunek poproszę), „una caña" (małe piwo), „sin carne" (bez mięsa). Po angielsku w centrum dogadacie się bez problemu.</span><span class="en">"Hola", "gracias", "la cuenta, por favor" (the bill please), "una caña" (a small beer), "sin carne" (no meat). English works fine in the centre.</span></p>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-icon">🎟️</div>
+      <div>
+        <h4><span class="pl">Rezerwacje z wyprzedzeniem</span><span class="en">Book ahead</span></h4>
+        <p><span class="pl">Trzy rzeczy do kupienia online przed wyjazdem: <strong>Caminito del Rey 11:30</strong>, <strong>pociąg do El Chorro</strong> (renfe.com) i <strong>Muzeum Picassa</strong>. Reszta na miejscu.</span><span class="en">Three things to buy online before the trip: <strong>Caminito del Rey 11:30</strong>, the <strong>El Chorro train</strong> (renfe.com) and the <strong>Picasso Museum</strong>. Everything else on the day.</span></p>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-icon">💧</div>
+      <div>
+        <h4><span class="pl">Woda z kranu</span><span class="en">Tap water</span></h4>
+        <p><span class="pl">W Maladze zdatna do picia — butelka wielorazowa wystarczy. W restauracjach domyślnie podadzą butelkowaną; można poprosić o „agua del grifo".</span><span class="en">Drinkable in Málaga — a refillable bottle is all you need. Restaurants default to bottled; you can ask for "agua del grifo".</span></p>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-icon">🎒</div>
+      <div>
+        <h4><span class="pl">Kieszonkowcy</span><span class="en">Pickpockets</span></h4>
+        <p><span class="pl">Standard dużego turystycznego miasta: uwaga na Calle Larios, targu i na plaży. Nie zostawiajcie telefonów na stolikach ani rzeczy bez opieki na Malaguecie podczas kąpieli.</span><span class="en">Standard big-tourist-city rules: watch your stuff on Calle Larios, at the market and on the beach. Don't leave phones on tables or bags unattended on Malagueta while swimming.</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Málaga 2026</strong> · <span class="pl">10 – 14 sierpnia · 2 podróżników</span><span class="en">August 10 – 14 · 2 travellers</span></p>
+  <p style="margin-top:0.5rem;"><span class="pl">Zbudowane w HTML · Bez frameworków · GitHub Pages</span><span class="en">Built with HTML · No frameworks · GitHub Pages</span></p>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('langBtn');
+    function setLang(l) {
+      document.body.classList.toggle('lang-en', l === 'en');
+      document.documentElement.lang = l;
+      btn.textContent = l === 'en' ? 'PL' : 'EN';
+      try { localStorage.setItem('malaga-lang', l); } catch (e) {}
+    }
+    var saved = 'pl';
+    try { saved = localStorage.getItem('malaga-lang') || 'pl'; } catch (e) {}
+    setLang(saved);
+    btn.addEventListener('click', function () {
+      setLang(document.body.classList.contains('lang-en') ? 'pl' : 'en');
+    });
+  })();
+</script>
+
+</body>
+</html>
