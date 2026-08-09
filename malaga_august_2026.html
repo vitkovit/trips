@@ -224,6 +224,25 @@
   .map-embed-wrap iframe { display: block; width: 100%; height: 100%; border: none; }
   .map-placeholder { display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; width: 100%; aspect-ratio: 640 / 300; border: 1px dashed rgba(156,43,43,0.5); color: var(--red); font-size: 0.9rem; margin-bottom: 1rem; }
 
+  /* ─── GEM ITEMS ─── */
+  .gem-item { display: flex; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+  .gem-item:last-child { border-bottom: none; }
+  .gem-number { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 300; color: rgba(140,58,29,0.16); line-height: 1; flex-shrink: 0; width: 48px; }
+  .gem-content h4 { font-family: 'Karla', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .gem-content .gem-where { font-size: 0.78rem; color: var(--terra); font-weight: 600; margin-bottom: 0.4rem; }
+  .gem-content p { font-size: 0.87rem; color: var(--ink-mid); line-height: 1.6; }
+
+  /* ─── ECLIPSE BOX ─── */
+  .eclipse-box { background: linear-gradient(160deg, #1A2233 0%, #10151F 100%); border: 1px solid rgba(224,160,75,0.45); padding: 1.75rem; margin-bottom: 2.5rem; }
+  .eclipse-box h3 { color: #FBF3E1; font-family: 'Fraunces', serif; margin-bottom: 0.3rem; }
+  .eclipse-box .eclipse-sub { font-size: 0.85rem; color: rgba(251,243,225,0.55); margin-bottom: 1.25rem; }
+  .eclipse-times { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: rgba(251,243,225,0.12); border: 1px solid rgba(251,243,225,0.12); margin-bottom: 1.25rem; }
+  .eclipse-time { background: rgba(251,243,225,0.05); padding: 0.9rem 1.1rem; }
+  .eclipse-time .et-val { font-family: 'Fraunces', serif; font-size: 1.4rem; color: #E8B04B; }
+  .eclipse-time .et-label { font-size: 0.72rem; color: rgba(251,243,225,0.5); letter-spacing: 0.08em; text-transform: uppercase; }
+  .eclipse-box p { font-size: 0.87rem; color: rgba(251,243,225,0.75); line-height: 1.6; }
+  .eclipse-warn { margin-top: 1rem; padding: 0.9rem 1.1rem; background: rgba(156,43,43,0.25); border: 1px solid rgba(224,120,120,0.4); font-size: 0.85rem; color: #F2C4C4; }
+
   /* ─── PRINT ─── */
   @media print {
     nav { display: none; }
@@ -237,6 +256,7 @@
     .timeline-item { grid-template-columns: 64px 1fr; }
     .hero-cards { grid-template-columns: 1fr 1fr; }
     .alarm-time { font-size: 1.3rem; min-width: 56px; }
+    .gem-number { display: none; }
   }
 
   /* ─── ANIMATIONS ─── */
@@ -261,6 +281,7 @@
   <a href="#thursday"><span class="pl">Czwartek</span><span class="en">Thursday</span></a>
   <a href="#food"><span class="pl">Jedzenie</span><span class="en">Food</span></a>
   <a href="#tips"><span class="pl">Wskazówki</span><span class="en">Tips</span></a>
+  <a href="#gems"><span class="pl">Perełki</span><span class="en">Gems</span></a>
   <button class="lang-btn" id="langBtn" type="button">EN</button>
 </nav>
 
@@ -595,8 +616,20 @@
 
     <div class="timeline-item">
       <div class="timeline-time-col">
+        <div class="timeline-dot accent"></div>
+        <div class="timeline-time">19:43</div>
+      </div>
+      <div class="timeline-content">
+        <h4><span class="pl">🌘 Zaćmienie Słońca — 94,5% o zachodzie</span><span class="en">🌘 Solar eclipse — 94.5% at sunset</span></h4>
+        <p><span class="pl">Tego wieczoru nad Hiszpanią przechodzi wielkie zaćmienie Słońca — w Maladze częściowe, ale aż 94,5%. Maksimum o <strong>20:38</strong>, tuż nad horyzontem. Jesteście już na plaży, więc zostańcie — szczegóły, miejsca i ostrzeżenia w <a class="maps" href="#gems" style="color:var(--terra);border-bottom-color:rgba(192,83,43,0.35);">sekcji 09</a>.</span><span class="en">A major solar eclipse crosses Spain this evening — partial in Málaga, but a huge 94.5%. Maximum at <strong>20:38</strong>, just above the horizon. You're already at the beach, so stay put — details, spots and warnings in <a class="maps" href="#gems" style="color:var(--terra);border-bottom-color:rgba(192,83,43,0.35);">section 09</a>.</span></p>
+        <div class="badge-row"><span class="badge badge-red"><span class="pl">Tylko przez okulary zaćmieniowe!</span><span class="en">Eclipse glasses only!</span></span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time-col">
         <div class="timeline-dot"></div>
-        <div class="timeline-time">21:00</div>
+        <div class="timeline-time">21:30</div>
       </div>
       <div class="timeline-content">
         <h4><span class="pl">Wieczór — wcześniej do łóżka</span><span class="en">Evening — earlyish night</span></h4>
@@ -907,6 +940,161 @@
       </div>
     </div>
   </div>
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 9 — HIDDEN GEMS & EVENTS
+════════════════════════════════════════════════ -->
+<section id="gems">
+<div class="container">
+  <div class="section-header">
+    <div class="section-number">09</div>
+    <div class="section-header-text">
+      <div class="label"><span class="pl">Research: perełki, kawa i wydarzenia</span><span class="en">Research: gems, coffee & events</span></div>
+      <h2><span class="pl">Poza utartym szlakiem</span><span class="en">Off the beaten track</span></h2>
+    </div>
+  </div>
+  <div class="terra-line"></div>
+
+  <p style="margin-bottom:2rem;font-size:0.95rem;"><span class="pl">Zero nowoczesnych muzeów i rzeczy, które można zobaczyć wszędzie — tylko to, co jest z Malagi i z Andaluzji. Plus jedno wydarzenie, które trafia się raz na sto lat i wypada dokładnie w wasz wtorek.</span><span class="en">No modern-art museums and nothing you could see anywhere else — only what's genuinely of Málaga and Andalusia. Plus one event that happens once a century and lands exactly on your Tuesday.</span></p>
+
+  <!-- ECLIPSE -->
+  <div class="eclipse-box">
+    <h3><span class="pl">🌘 Zaćmienie Słońca — wtorek 12 sierpnia</span><span class="en">🌘 Solar eclipse — Tuesday 12 August</span></h3>
+    <div class="eclipse-sub"><span class="pl">Pierwsze wielkie zaćmienie nad Hiszpanią od 1905 roku. Pas fazy całkowitej przechodzi przez północ kraju — w Maladze Księżyc zasłoni <strong style="color:#E8B04B">94,5%</strong> tarczy Słońca, nisko nad horyzontem, tuż przed zachodem.</span><span class="en">The first great eclipse over Spain since 1905. The path of totality crosses the north of the country — in Málaga the Moon covers <strong style="color:#E8B04B">94.5%</strong> of the Sun, low over the horizon, just before sunset.</span></div>
+    <div class="eclipse-times">
+      <div class="eclipse-time"><div class="et-val">19:43</div><div class="et-label"><span class="pl">Początek</span><span class="en">First contact</span></div></div>
+      <div class="eclipse-time"><div class="et-val">20:38</div><div class="et-label"><span class="pl">Maksimum · 94,5%</span><span class="en">Maximum · 94.5%</span></div></div>
+      <div class="eclipse-time"><div class="et-val">21:12</div><div class="et-label"><span class="pl">Zachód — Słońce zajdzie zaćmione</span><span class="en">Sunset — still eclipsed</span></div></div>
+    </div>
+    <p><span class="pl"><strong style="color:#FBF3E1">Skąd patrzeć:</strong> przy maksimum Słońce będzie ledwo ~6° nad horyzontem, więc potrzebujecie otwartego widoku na zachód-północny-zachód. Najlepiej: <strong style="color:#FBF3E1">punkt widokowy Gibralfaro</strong> (wysoko, nad dachami) albo koniec nabrzeża w porcie. Opcja „na bogato": specjalny wieczór zaćmieniowo-perseidowy na kolejce linowej w Benalmádenie — dojazd waszą C1 do Arroyo de la Miel.</span><span class="en"><strong style="color:#FBF3E1">Where to watch:</strong> at maximum the Sun will be barely ~6° above the horizon, so you need an open view to the west-northwest. Best: the <strong style="color:#FBF3E1">Gibralfaro viewpoint</strong> (high, above the rooftops) or the end of the port quay. The "fancy" option: the special eclipse-and-Perseids evening at the Benalmádena cable car — reachable on your C1 to Arroyo de la Miel.</span></p>
+    <p style="margin-top:0.75rem;"><span class="pl"><strong style="color:#FBF3E1">Bonus tej samej nocy:</strong> maksimum Perseidów — a że jest nów (stąd zaćmienie), niebo będzie idealnie ciemne. Spadające gwiazdy z plaży po zmroku, im dalej od świateł, tym lepiej.</span><span class="en"><strong style="color:#FBF3E1">Bonus the same night:</strong> the Perseid meteor shower peaks — and since it's a new moon (hence the eclipse), the sky will be perfectly dark. Shooting stars from the beach after dark; the further from the lights, the better.</span></p>
+    <div class="eclipse-warn"><span class="pl"><strong>⚠ Nigdy nie patrzcie na Słońce bez filtra.</strong> Kupcie okulary zaćmieniowe (norma ISO 12312-2) w poniedziałek — apteki i optycy w centrum; przy tak głośnym zaćmieniu wyprzedają się szybko. Okulary przeciwsłoneczne NIE wystarczą, nawet przy 94,5%.</span><span class="en"><strong>⚠ Never look at the Sun without a filter.</strong> Buy eclipse glasses (ISO 12312-2) on Monday — pharmacies and opticians in the centre; with an eclipse this hyped they sell out fast. Sunglasses are NOT enough, even at 94.5%.</span></div>
+  </div>
+
+  <!-- EVENTS -->
+  <h3 style="font-size:1rem;font-family:'Karla',sans-serif;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:1rem;"><span class="pl">Wydarzenia w waszym tygodniu</span><span class="en">Events during your week</span></h3>
+  <div class="food-grid" style="margin-bottom:2.5rem;">
+    <div class="food-card">
+      <div class="food-name"><span class="pl">Cine Abierto — kino pod gwiazdami, za darmo</span><span class="en">Cine Abierto — free open-air cinema</span></div>
+      <div class="food-location"><span class="pl">M.in. plaże La Malagueta i El Palo · do 13 sierpnia · 22:15</span><span class="en">Incl. La Malagueta & El Palo beaches · until 13 Aug · 22:15</span></div>
+      <div class="food-desc"><span class="pl">Miejski letni cykl: 105 darmowych projekcji w całym mieście, bez rezerwacji. Leżak na piasku, film o 22:15 — idealne na niedzielny albo środowy wieczór (w poniedziałki plaże pauzują). Program na malaga.eu / festivaldemalaga.com/cineabierto.</span><span class="en">The city's summer programme: 105 free screenings across town, no booking. A spot on the sand, film at 22:15 — perfect for Sunday or Wednesday night (beach venues pause on Mondays). Programme at malaga.eu / festivaldemalaga.com/cineabierto.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name"><span class="pl">Przedsmak Ferii</span><span class="en">The Feria build-up</span></div>
+      <div class="food-location"><span class="pl">Całe centrum · przez cały wasz pobyt</span><span class="en">All over the centre · all week</span></div>
+      <div class="food-desc"><span class="pl">Feria de Málaga — największa fiesta miasta — rusza 15 sierpnia, dzień po waszym wylocie (tak, boli). Ale całe miasto będzie się już stroić: lampiony nad Calle Larios, próby kapel, dekoracje. Warto łazić wieczorami i chłonąć przedferiową gorączkę.</span><span class="en">The Feria de Málaga — the city's biggest fiesta — kicks off on 15 August, the day after you fly out (yes, it hurts). But the whole city will already be dressing up: lanterns over Calle Larios, bands rehearsing, decorations going up. Wander in the evenings and soak up the pre-Feria buzz.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name"><span class="pl">Wieczór flamenco</span><span class="en">A flamenco night</span></div>
+      <div class="food-location"><span class="pl">Kelipé (centrum) lub Peña Juan Breva</span><span class="en">Kelipé (centre) or Peña Juan Breva</span></div>
+      <div class="food-desc"><span class="pl">Zamiast tabladao dla wycieczek — <strong>Kelipé</strong>: mała sala, artyści na wyciągnięcie ręki (rezerwujcie online), albo <strong>Peña Juan Breva</strong> — stowarzyszenie flamenco z muzeum gitar i występami, do którego turyści prawie nie trafiają. Malaga ma własny styl: verdiales i malagueñas.</span><span class="en">Skip the tour-bus tablaos — <strong>Kelipé</strong>: a tiny room with artists at arm's length (book online), or <strong>Peña Juan Breva</strong> — a flamenco association with a guitar museum and performances tourists rarely find. Málaga has its own styles: verdiales and malagueñas.</span></div>
+    </div>
+  </div>
+
+  <!-- COFFEE -->
+  <h3 style="font-size:1rem;font-family:'Karla',sans-serif;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:1rem;"><span class="pl">Kawa speciality (i jedna legenda)</span><span class="en">Specialty coffee (and one legend)</span></h3>
+  <div class="food-grid" style="margin-bottom:2.5rem;">
+    <div class="food-card featured">
+      <div class="food-name">Café Central ★ <span class="pl">Legenda + instrukcja zamawiania</span><span class="en">The legend + the ordering chart</span></div>
+      <div class="food-location">Plaza de la Constitución</div>
+      <div class="food-desc"><span class="pl">To tutaj wymyślono malagijską skalę kawy — od <em>solo</em> (samo espresso) przez <em>mitad</em> (pół na pół), <em>sombra</em> („cień" kawy w mleku) po <em>nube</em> („chmurka" — prawie samo mleko). Słynna kafelkowa tablica wisi nad barem. Zamówcie „una sombra" i wtopcie się w miejscowych. Kawa zwykła, doświadczenie — bezcenne.</span><span class="en">This is where Málaga's coffee scale was invented — from <em>solo</em> (straight espresso) through <em>mitad</em> (half and half) and <em>sombra</em> (a "shadow" of coffee in milk) to <em>nube</em> (a "cloud" — nearly all milk). The famous tiled chart hangs over the bar. Order "una sombra" and blend in with the locals. The coffee is ordinary; the experience isn't.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Santa Coffee</div>
+      <div class="food-location"><span class="pl">Soho — 2 min od mieszkania (też: centrum, katedra)</span><span class="en">Soho — 2 min from the apartment (also: centre, cathedral)</span></div>
+      <div class="food-desc"><span class="pl">Instytucja malagijskiej sceny speciality: jasne palenie, single origin, V60/Aeropress/Chemex. Wasza poranna baza.</span><span class="en">An institution of Málaga's specialty scene: light roasts, single origins, V60/Aeropress/Chemex. Your morning base.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Next Level Specialty Coffee</div>
+      <div class="food-location"><span class="pl">Przy Alameda Principal</span><span class="en">Near the Alameda Principal</span></div>
+      <div class="food-desc"><span class="pl">Jedne z najlepszych flat white'ów w mieście, po drodze do wszystkiego.</span><span class="en">Some of the best flat whites in town, on the way to everything.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Mia Coffee House</div>
+      <div class="food-location"><span class="pl">Stare miasto</span><span class="en">Old town</span></div>
+      <div class="food-desc"><span class="pl">Mała, cicha, skupiona na kawie — najrówniejszy brew w centrum.</span><span class="en">Small, quiet, coffee-first — the most consistent brew in the centre.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Bertani Café</div>
+      <div class="food-location"><span class="pl">Stare miasto</span><span class="en">Old town</span></div>
+      <div class="food-desc"><span class="pl">Pierwsza kawiarnia speciality w Maladze — klimat bardziej włoski niż skandynawski.</span><span class="en">Málaga's first specialty café — more Italian than Scandinavian in spirit.</span></div>
+    </div>
+    <div class="food-card">
+      <div class="food-name"><span class="pl">Pro tip: café con hielo</span><span class="en">Pro tip: café con hielo</span></div>
+      <div class="food-location"><span class="pl">Wszędzie</span><span class="en">Anywhere</span></div>
+      <div class="food-desc"><span class="pl">Espresso + szklanka lodu: słodzicie kawę, przelewacie na lód, pijecie. Andaluzyjski sposób na sierpień.</span><span class="en">Espresso + a glass of ice: sweeten the coffee, pour it over the ice, drink. The Andalusian answer to August.</span></div>
+    </div>
+  </div>
+
+  <!-- GEMS -->
+  <h3 style="font-size:1rem;font-family:'Karla',sans-serif;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:0.5rem;"><span class="pl">Perełki — tylko andaluzyjskie</span><span class="en">Hidden gems — Andalusian only</span></h3>
+
+  <div class="gem-item">
+    <div class="gem-number">01</div>
+    <div class="gem-content">
+      <h4>Antigua Casa de Guardia</h4>
+      <div class="gem-where">Alameda Principal 18 · <span class="pl">3 min od mieszkania · od 1840</span><span class="en">3 min from the apartment · since 1840</span></div>
+      <p><span class="pl">Najstarsza taberna Malagi: słodkie i wytrawne wina Málaga lane wprost z rzędu ciemnych beczek, rachunek pisany kredą na barze, zero krzeseł, podłoga z trocinami w duchu. Weźcie <em>Pajarete</em> albo <em>Pedro Ximén</em> i talerzyk małży. Tu się stoi, pije i patrzy — nic się nie zmieniło od 180 lat.</span><span class="en">Málaga's oldest tavern: sweet and dry Málaga wines poured straight from a row of dark barrels, your tab chalked on the bar, no chairs. Order a <em>Pajarete</em> or <em>Pedro Ximén</em> and a plate of mussels. You stand, you sip, you watch — nothing has changed in 180 years.</span></p>
+    </div>
+  </div>
+
+  <div class="gem-item">
+    <div class="gem-number">02</div>
+    <div class="gem-content">
+      <h4>La Tranca</h4>
+      <div class="gem-where">Calle Carretería · <span class="pl">wieczorem</span><span class="en">evenings</span></div>
+      <p><span class="pl">Mały, głośny, obwieszony winylami bar, w którym miejscowi śpiewają razem z hiszpańskimi przebojami lat 70. Wermut z beczki, wino słodkie, tapas z puszki podane z dumą. Najbardziej „lokalny" wieczór, jaki można mieć w centrum.</span><span class="en">A small, loud bar plastered with vinyl records where locals sing along to 70s Spanish hits. Vermouth on tap, sweet wine, proudly-served tinned tapas. The most "local" night out you can have in the centre.</span></p>
+    </div>
+  </div>
+
+  <div class="gem-item">
+    <div class="gem-number">03</div>
+    <div class="gem-content">
+      <h4><span class="pl">Pedregalejo i El Palo — espeto u źródła</span><span class="en">Pedregalejo & El Palo — espeto at the source</span></h4>
+      <div class="gem-where"><span class="pl">Dawne dzielnice rybackie · autobus 11 lub spacer brzegiem (~40 min z Malaguety)</span><span class="en">Old fishing quarters · bus 11 or a seafront walk (~40 min from Malagueta)</span></div>
+      <p><span class="pl">Tam, gdzie espeto naprawdę mieszka: niskie domki rybackie, łódki z ogniskami na piasku, ceny dla miejscowych. W <strong>El Tintero</strong> w El Palo kelnerzy krążą z talerzami i wykrzykują, co niosą — łapiecie w locie to, co wygląda najlepiej. Chaos, teatr i najlepsza smażona ryba w mieście.</span><span class="en">Where the espeto actually lives: low fishermen's houses, boats with fires on the sand, local prices. At <strong>El Tintero</strong> in El Palo, waiters circle with plates shouting what they're carrying — you grab whatever looks best as it passes. Chaos, theatre, and the best fried fish in town.</span></p>
+    </div>
+  </div>
+
+  <div class="gem-item">
+    <div class="gem-number">04</div>
+    <div class="gem-content">
+      <h4>Baños del Carmen</h4>
+      <div class="gem-where"><span class="pl">Po drodze do Pedregalejo · najlepiej o zachodzie</span><span class="en">On the way to Pedregalejo · best at sunset</span></div>
+      <p><span class="pl">Kąpielisko z 1918 roku, dziś lekko podniszczony chiringuito pod starymi eukaliptusami, z tarasem nad samą wodą. Tinto de verano o zachodzie słońca z widokiem na całą zatokę — bez tłumów z Malaguety.</span><span class="en">A 1918 bathing house, now a faded-glory chiringuito under old eucalyptus trees with a terrace right over the water. A sunset tinto de verano looking across the whole bay — without the Malagueta crowds.</span></p>
+    </div>
+  </div>
+
+  <div class="gem-item">
+    <div class="gem-number">05</div>
+    <div class="gem-content">
+      <h4>Mercado de Salamanca</h4>
+      <div class="gem-where"><span class="pl">Dzielnica El Molinillo · rano</span><span class="en">El Molinillo district · mornings</span></div>
+      <p><span class="pl">Młodszy, mniejszy brat Atarazanas, do którego turyści nie docierają: neomudéjarska hala z 1925 roku jak z bajki — podkowiaste łuki, kolorowe kafle — i targ, na którym słychać tylko hiszpański. 10 minut spaceru od centrum, a inny świat.</span><span class="en">Atarazanas' smaller, younger sibling that tourists never reach: a fairytale 1925 neo-Moorish hall — horseshoe arches, coloured tiles — and a market where you'll hear only Spanish. Ten minutes' walk from the centre, a different world.</span></p>
+    </div>
+  </div>
+
+  <div class="gem-item">
+    <div class="gem-number">06</div>
+    <div class="gem-content">
+      <h4><span class="pl">Biznagi — zapach Malagi</span><span class="en">Biznagas — the smell of Málaga</span></h4>
+      <div class="gem-where"><span class="pl">Wieczorami na placach starówki</span><span class="en">Evenings on the old-town squares</span></div>
+      <p><span class="pl">Latem po placach krążą <em>biznagueros</em> w białych strojach, sprzedając biznagi: „gwiazdy" z pączków jaśminu wbitych w łodygę ostu. To symbol miasta — ma nawet swój pomnik. Kupcie jedną (kilka euro), pachnie całą noc i jest najbardziej malagijską pamiątką, jaka istnieje.</span><span class="en">On summer evenings, <em>biznagueros</em> in white outfits roam the squares selling biznagas: "stars" of jasmine buds pinned into a dried thistle stem. It's the city's symbol — it even has its own statue. Buy one (a few euros); it perfumes the whole night and is the most Málaga souvenir there is.</span></p>
+    </div>
+  </div>
+
+  <div class="gem-item">
+    <div class="gem-number">07</div>
+    <div class="gem-content">
+      <h4><span class="pl">Wino słodkie Málaga — na wynos</span><span class="en">Sweet Málaga wine — to take home</span></h4>
+      <div class="gem-where"><span class="pl">Casa de Guardia butelkuje z beczki · sklepy przy Atarazanas</span><span class="en">Casa de Guardia bottles from the barrel · shops near Atarazanas</span></div>
+      <p><span class="pl">Zamiast magnesów: butelka wina z apelacji DO Málaga (moscatel albo Pedro Ximénez). W Casa de Guardia naleją wam z konkretnej beczki do butelki z korkiem — pamiątka, której nie kupi się na lotnisku. Pamiętajcie: do bagażu rejestrowanego!</span><span class="en">Instead of fridge magnets: a bottle from the DO Málaga appellation (moscatel or Pedro Ximénez). At Casa de Guardia they'll fill a corked bottle from a specific barrel — a souvenir you can't buy at the airport. Remember: checked luggage only!</span></p>
+    </div>
+  </div>
+
 </div>
 </section>
 
