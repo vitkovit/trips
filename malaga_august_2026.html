@@ -272,7 +272,6 @@
 <nav>
   <a class="nav-home" href="index.html"><span class="pl">← Wszystkie wyjazdy</span><span class="en">← All trips</span></a>
   <a href="#top">Málaga '26</a>
-  <a href="#map"><span class="pl">Mapa</span><span class="en">Map</span></a>
   <a href="#arriving"><span class="pl">Przyjazd</span><span class="en">Arrival</span></a>
   <a href="#sunday"><span class="pl">Niedziela</span><span class="en">Sunday</span></a>
   <a href="#monday"><span class="pl">Poniedziałek</span><span class="en">Monday</span></a>
@@ -294,13 +293,13 @@
   <div class="hero-cards">
     <div class="hero-card">
       <div class="label"><span class="pl">Lot do Malagi</span><span class="en">Outbound flight</span></div>
-      <div class="value">— <span style="font-size:0.8rem;color:rgba(251,243,225,0.4)">TBC</span></div>
-      <div class="sub"><span class="pl">nr lotu i godziny do uzupełnienia · nd 10.08</span><span class="en">flight no. & times to be added · Sun 10 Aug</span></div>
+      <div class="value">W6 2073</div>
+      <div class="sub"><span class="pl">KRK 15:15 → AGP 19:10 · nd 10.08 · Wizz Air</span><span class="en">KRK 15:15 → AGP 19:10 · Sun 10 Aug · Wizz Air</span></div>
     </div>
     <div class="hero-card">
       <div class="label"><span class="pl">Lot powrotny</span><span class="en">Return flight</span></div>
-      <div class="value">19:45 → 23:30</div>
-      <div class="sub"><span class="pl">AGP → Kraków KRK · czw 14.08</span><span class="en">AGP → Kraków KRK · Thu 14 Aug</span></div>
+      <div class="value">W6 2074</div>
+      <div class="sub"><span class="pl">AGP 19:45 → KRK 23:30 · czw 14.08 · Wizz Air</span><span class="en">AGP 19:45 → KRK 23:30 · Thu 14 Aug · Wizz Air</span></div>
     </div>
     <div class="hero-card">
       <div class="label"><span class="pl">Baza</span><span class="en">Base</span></div>
@@ -328,33 +327,6 @@
 
 
 <!-- ═══════════════════════════════════════════════
-     MAP SECTION
-════════════════════════════════════════════════ -->
-<section class="map-section" id="map">
-<div class="container">
-  <div class="section-header">
-    <div class="section-number" style="font-size:2rem;opacity:0.3;">◎</div>
-    <div class="section-header-text">
-      <div class="label"><span class="pl">Wszystkie kluczowe miejsca</span><span class="en">All key locations</span></div>
-      <h2><span class="pl">Mapa i lokalizacje</span><span class="en">Map & locations</span></h2>
-    </div>
-  </div>
-
-  <!-- TODO: paste Google My Maps embed here, same as Stockholm page:
-       <div class="map-embed-wrap">
-         <iframe src="https://www.google.com/maps/d/embed?mid=YOUR_MAP_ID"></iframe>
-       </div>
-  -->
-  <div class="map-placeholder">
-    <span class="pl">🔗 Tu wklej osadzoną mapę Google My Maps ze wszystkimi pinezkami (jak dla Sztokholmu) — podeślij mi link, a ja ją podepnę.</span>
-    <span class="en">🔗 Paste the Google My Maps embed with all pins here (like the Stockholm one) — send me the link and I'll wire it up.</span>
-  </div>
-
-</div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
      SECTION 1 — ARRIVING
 ════════════════════════════════════════════════ -->
 <section id="arriving">
@@ -367,8 +339,25 @@
     </div>
   </div>
 
-  <div class="tbd-box">
-    <strong>✈ TBC:</strong> <span class="pl">wklej numer lotu i godziny przylotu do Malagi — uzupełnię pasek lotu jak dla Sztokholmu.</span><span class="en">paste the outbound flight number and arrival time — I'll fill in the flight strip like on the Stockholm page.</span>
+  <div class="flight-strip">
+    <div>
+      <div class="flight-time">15:15</div>
+      <div class="flight-city">Kraków KRK</div>
+    </div>
+    <div class="flight-line">
+      <div class="flight-meta">W6 2073 · 3 h 55 min</div>
+      <div class="flight-line-bar"></div>
+      <div class="flight-meta">Wizz Air</div>
+    </div>
+    <div style="text-align:right">
+      <div class="flight-time">19:10</div>
+      <div class="flight-city">Málaga AGP</div>
+    </div>
+    <div class="badge-row"><span class="badge badge-terra"><span class="pl">Niedziela 10 sierpnia</span><span class="en">Sunday 10 August</span></span><span class="badge badge-saffron"><span class="pl">Godziny wg rozkładu — sprawdźcie kartę pokładową</span><span class="en">Times per schedule — check your boarding pass</span></span></div>
+  </div>
+
+  <div class="info-box" style="margin-top:1rem">
+    <span class="pl"><strong>Przylot wieczorem:</strong> lądujecie 19:10, w mieszkaniu będziecie ok. 20:15–20:30 — czyli dokładnie w hiszpańskiej porze kolacji. Lista miejsc na pierwszy wieczór czeka w sekcji 02.</span><span class="en"><strong>Evening arrival:</strong> you land at 19:10 and reach the apartment around 20:15–20:30 — which is exactly Spanish dinner time. The first-night shortlist is waiting in section 02.</span>
   </div>
 
   <div class="transport-option recommended">
@@ -719,15 +708,15 @@
       <div class="flight-city">Málaga AGP</div>
     </div>
     <div class="flight-line">
-      <div class="flight-meta"><span class="pl">nr lotu TBC · ~3 h 45 min</span><span class="en">flight no. TBC · ~3 h 45 min</span></div>
+      <div class="flight-meta">W6 2074 · 3 h 45 min</div>
       <div class="flight-line-bar"></div>
-      <div class="flight-meta">&nbsp;</div>
+      <div class="flight-meta">Wizz Air</div>
     </div>
     <div style="text-align:right">
       <div class="flight-time">23:30</div>
       <div class="flight-city">Kraków KRK</div>
     </div>
-    <div class="badge-row"><span class="badge badge-terra"><span class="pl">Czwartek 14 sierpnia, wieczór</span><span class="en">Thursday 14 August, evening</span></span><span class="badge tbd"><span class="pl">✈ nr lotu do wklejenia</span><span class="en">✈ flight no. to paste</span></span></div>
+    <div class="badge-row"><span class="badge badge-terra"><span class="pl">Czwartek 14 sierpnia, wieczór</span><span class="en">Thursday 14 August, evening</span></span></div>
   </div>
 
   <div style="height:1.5rem"></div>
@@ -969,7 +958,7 @@
       <div class="eclipse-time"><div class="et-val">20:38</div><div class="et-label"><span class="pl">Maksimum · 94,5%</span><span class="en">Maximum · 94.5%</span></div></div>
       <div class="eclipse-time"><div class="et-val">21:12</div><div class="et-label"><span class="pl">Zachód — Słońce zajdzie zaćmione</span><span class="en">Sunset — still eclipsed</span></div></div>
     </div>
-    <p><span class="pl"><strong style="color:#FBF3E1">Skąd patrzeć:</strong> przy maksimum Słońce będzie ledwo ~6° nad horyzontem, więc potrzebujecie otwartego widoku na zachód-północny-zachód. Najlepiej: <strong style="color:#FBF3E1">punkt widokowy Gibralfaro</strong> (wysoko, nad dachami) albo koniec nabrzeża w porcie. Opcja „na bogato": specjalny wieczór zaćmieniowo-perseidowy na kolejce linowej w Benalmádenie — dojazd waszą C1 do Arroyo de la Miel.</span><span class="en"><strong style="color:#FBF3E1">Where to watch:</strong> at maximum the Sun will be barely ~6° above the horizon, so you need an open view to the west-northwest. Best: the <strong style="color:#FBF3E1">Gibralfaro viewpoint</strong> (high, above the rooftops) or the end of the port quay. The "fancy" option: the special eclipse-and-Perseids evening at the Benalmádena cable car — reachable on your C1 to Arroyo de la Miel.</span></p>
+    <p><span class="pl"><strong style="color:#FBF3E1">Skąd patrzeć:</strong> przy maksimum Słońce będzie ledwo ~6° nad horyzontem, więc potrzebujecie otwartego widoku na zachód-północny-zachód. Najlepiej: <strong style="color:#FBF3E1">punkt widokowy Gibralfaro</strong> (wysoko, nad dachami) albo koniec nabrzeża w porcie. Opcja „na bogato": specjalny wieczór zaćmieniowo-perseidowy na <a href="https://maps.app.goo.gl/Xaqewhi9nhDJreiX8" target="_blank" rel="noopener" style="color:#E8B04B;">kolejce linowej w Benalmádenie</a> — dojazd waszą C1 do Arroyo de la Miel.</span><span class="en"><strong style="color:#FBF3E1">Where to watch:</strong> at maximum the Sun will be barely ~6° above the horizon, so you need an open view to the west-northwest. Best: the <strong style="color:#FBF3E1">Gibralfaro viewpoint</strong> (high, above the rooftops) or the end of the port quay. The "fancy" option: the special eclipse-and-Perseids evening at the <a href="https://maps.app.goo.gl/Xaqewhi9nhDJreiX8" target="_blank" rel="noopener" style="color:#E8B04B;">Benalmádena cable car</a> — reachable on your C1 to Arroyo de la Miel.</span></p>
     <p style="margin-top:0.75rem;"><span class="pl"><strong style="color:#FBF3E1">Bonus tej samej nocy:</strong> maksimum Perseidów — a że jest nów (stąd zaćmienie), niebo będzie idealnie ciemne. Spadające gwiazdy z plaży po zmroku, im dalej od świateł, tym lepiej.</span><span class="en"><strong style="color:#FBF3E1">Bonus the same night:</strong> the Perseid meteor shower peaks — and since it's a new moon (hence the eclipse), the sky will be perfectly dark. Shooting stars from the beach after dark; the further from the lights, the better.</span></p>
     <div class="eclipse-warn"><span class="pl"><strong>⚠ Nigdy nie patrzcie na Słońce bez filtra.</strong> Kupcie okulary zaćmieniowe (norma ISO 12312-2) w poniedziałek — apteki i optycy w centrum; przy tak głośnym zaćmieniu wyprzedają się szybko. Okulary przeciwsłoneczne NIE wystarczą, nawet przy 94,5%.</span><span class="en"><strong>⚠ Never look at the Sun without a filter.</strong> Buy eclipse glasses (ISO 12312-2) on Monday — pharmacies and opticians in the centre; with an eclipse this hyped they sell out fast. Sunglasses are NOT enough, even at 94.5%.</span></div>
   </div>
@@ -989,7 +978,7 @@
     </div>
     <div class="food-card">
       <div class="food-name"><span class="pl">Wieczór flamenco</span><span class="en">A flamenco night</span></div>
-      <div class="food-location"><span class="pl">Kelipé (centrum) lub Peña Juan Breva</span><span class="en">Kelipé (centre) or Peña Juan Breva</span></div>
+      <div class="food-location"><a class="maps" href="https://maps.app.goo.gl/98Pt4DX5tgEAYTD79" target="_blank" rel="noopener">Kelipé</a> <span class="pl">(centrum) lub </span><span class="en">(centre) or </span><a class="maps" href="https://maps.app.goo.gl/79sYSrJDT76QVANc8" target="_blank" rel="noopener">Peña Juan Breva</a></div>
       <div class="food-desc"><span class="pl">Zamiast tabladao dla wycieczek — <strong>Kelipé</strong>: mała sala, artyści na wyciągnięcie ręki (rezerwujcie online), albo <strong>Peña Juan Breva</strong> — stowarzyszenie flamenco z muzeum gitar i występami, do którego turyści prawie nie trafiają. Malaga ma własny styl: verdiales i malagueñas.</span><span class="en">Skip the tour-bus tablaos — <strong>Kelipé</strong>: a tiny room with artists at arm's length (book online), or <strong>Peña Juan Breva</strong> — a flamenco association with a guitar museum and performances tourists rarely find. Málaga has its own styles: verdiales and malagueñas.</span></div>
     </div>
   </div>
@@ -999,27 +988,27 @@
   <div class="food-grid" style="margin-bottom:2.5rem;">
     <div class="food-card featured">
       <div class="food-name">Café Central ★ <span class="pl">Legenda + instrukcja zamawiania</span><span class="en">The legend + the ordering chart</span></div>
-      <div class="food-location">Plaza de la Constitución</div>
+      <div class="food-location">Plaza de la Constitución · <a class="maps" href="https://maps.app.goo.gl/a73r36mgjHrbrXxc6" target="_blank" rel="noopener">Maps</a></div>
       <div class="food-desc"><span class="pl">To tutaj wymyślono malagijską skalę kawy — od <em>solo</em> (samo espresso) przez <em>mitad</em> (pół na pół), <em>sombra</em> („cień" kawy w mleku) po <em>nube</em> („chmurka" — prawie samo mleko). Słynna kafelkowa tablica wisi nad barem. Zamówcie „una sombra" i wtopcie się w miejscowych. Kawa zwykła, doświadczenie — bezcenne.</span><span class="en">This is where Málaga's coffee scale was invented — from <em>solo</em> (straight espresso) through <em>mitad</em> (half and half) and <em>sombra</em> (a "shadow" of coffee in milk) to <em>nube</em> (a "cloud" — nearly all milk). The famous tiled chart hangs over the bar. Order "una sombra" and blend in with the locals. The coffee is ordinary; the experience isn't.</span></div>
     </div>
     <div class="food-card">
       <div class="food-name">Santa Coffee</div>
-      <div class="food-location"><span class="pl">Soho — 2 min od mieszkania (też: centrum, katedra)</span><span class="en">Soho — 2 min from the apartment (also: centre, cathedral)</span></div>
+      <div class="food-location"><span class="pl">Soho — 2 min od mieszkania (też: centrum, katedra)</span><span class="en">Soho — 2 min from the apartment (also: centre, cathedral)</span> · <a class="maps" href="https://maps.app.goo.gl/RniZSEp5TRkHwZn29" target="_blank" rel="noopener">Maps</a></div>
       <div class="food-desc"><span class="pl">Instytucja malagijskiej sceny speciality: jasne palenie, single origin, V60/Aeropress/Chemex. Wasza poranna baza.</span><span class="en">An institution of Málaga's specialty scene: light roasts, single origins, V60/Aeropress/Chemex. Your morning base.</span></div>
     </div>
     <div class="food-card">
       <div class="food-name">Next Level Specialty Coffee</div>
-      <div class="food-location"><span class="pl">Przy Alameda Principal</span><span class="en">Near the Alameda Principal</span></div>
+      <div class="food-location"><span class="pl">Przy Alameda Principal</span><span class="en">Near the Alameda Principal</span> · <a class="maps" href="https://maps.app.goo.gl/JREun1Sys6dgbkWR6" target="_blank" rel="noopener">Maps</a></div>
       <div class="food-desc"><span class="pl">Jedne z najlepszych flat white'ów w mieście, po drodze do wszystkiego.</span><span class="en">Some of the best flat whites in town, on the way to everything.</span></div>
     </div>
     <div class="food-card">
       <div class="food-name">Mia Coffee House</div>
-      <div class="food-location"><span class="pl">Stare miasto</span><span class="en">Old town</span></div>
+      <div class="food-location"><span class="pl">Stare miasto</span><span class="en">Old town</span> · <a class="maps" href="https://maps.app.goo.gl/yhE98tGkVYG9VrMk6" target="_blank" rel="noopener">Maps</a></div>
       <div class="food-desc"><span class="pl">Mała, cicha, skupiona na kawie — najrówniejszy brew w centrum.</span><span class="en">Small, quiet, coffee-first — the most consistent brew in the centre.</span></div>
     </div>
     <div class="food-card">
       <div class="food-name">Bertani Café</div>
-      <div class="food-location"><span class="pl">Stare miasto</span><span class="en">Old town</span></div>
+      <div class="food-location"><span class="pl">Stare miasto</span><span class="en">Old town</span> · <a class="maps" href="https://maps.app.goo.gl/u3FyyWPKgXZNvYdY8" target="_blank" rel="noopener">Maps</a></div>
       <div class="food-desc"><span class="pl">Pierwsza kawiarnia speciality w Maladze — klimat bardziej włoski niż skandynawski.</span><span class="en">Málaga's first specialty café — more Italian than Scandinavian in spirit.</span></div>
     </div>
     <div class="food-card">
@@ -1036,7 +1025,7 @@
     <div class="gem-number">01</div>
     <div class="gem-content">
       <h4>Antigua Casa de Guardia</h4>
-      <div class="gem-where">Alameda Principal 18 · <span class="pl">3 min od mieszkania · od 1840</span><span class="en">3 min from the apartment · since 1840</span></div>
+      <div class="gem-where">Alameda Principal 18 · <span class="pl">3 min od mieszkania · od 1840</span><span class="en">3 min from the apartment · since 1840</span> · <a class="maps" href="https://maps.app.goo.gl/yoNS8gHeFpbRHofMA" target="_blank" rel="noopener">Maps</a></div>
       <p><span class="pl">Najstarsza taberna Malagi: słodkie i wytrawne wina Málaga lane wprost z rzędu ciemnych beczek, rachunek pisany kredą na barze, zero krzeseł, podłoga z trocinami w duchu. Weźcie <em>Pajarete</em> albo <em>Pedro Ximén</em> i talerzyk małży. Tu się stoi, pije i patrzy — nic się nie zmieniło od 180 lat.</span><span class="en">Málaga's oldest tavern: sweet and dry Málaga wines poured straight from a row of dark barrels, your tab chalked on the bar, no chairs. Order a <em>Pajarete</em> or <em>Pedro Ximén</em> and a plate of mussels. You stand, you sip, you watch — nothing has changed in 180 years.</span></p>
     </div>
   </div>
@@ -1045,7 +1034,7 @@
     <div class="gem-number">02</div>
     <div class="gem-content">
       <h4>La Tranca</h4>
-      <div class="gem-where">Calle Carretería · <span class="pl">wieczorem</span><span class="en">evenings</span></div>
+      <div class="gem-where">Calle Carretería · <span class="pl">wieczorem</span><span class="en">evenings</span> · <a class="maps" href="https://maps.app.goo.gl/Gpq9vfo6UUxhebt87" target="_blank" rel="noopener">Maps</a></div>
       <p><span class="pl">Mały, głośny, obwieszony winylami bar, w którym miejscowi śpiewają razem z hiszpańskimi przebojami lat 70. Wermut z beczki, wino słodkie, tapas z puszki podane z dumą. Najbardziej „lokalny" wieczór, jaki można mieć w centrum.</span><span class="en">A small, loud bar plastered with vinyl records where locals sing along to 70s Spanish hits. Vermouth on tap, sweet wine, proudly-served tinned tapas. The most "local" night out you can have in the centre.</span></p>
     </div>
   </div>
@@ -1054,7 +1043,7 @@
     <div class="gem-number">03</div>
     <div class="gem-content">
       <h4><span class="pl">Pedregalejo i El Palo — espeto u źródła</span><span class="en">Pedregalejo & El Palo — espeto at the source</span></h4>
-      <div class="gem-where"><span class="pl">Dawne dzielnice rybackie · autobus 11 lub spacer brzegiem (~40 min z Malaguety)</span><span class="en">Old fishing quarters · bus 11 or a seafront walk (~40 min from Malagueta)</span></div>
+      <div class="gem-where"><span class="pl">Dawne dzielnice rybackie · autobus 11 lub spacer brzegiem (~40 min z Malaguety)</span><span class="en">Old fishing quarters · bus 11 or a seafront walk (~40 min from Malagueta)</span> · <a class="maps" href="https://maps.app.goo.gl/pvUGYXV1ip1azAfGA" target="_blank" rel="noopener">El Tintero</a></div>
       <p><span class="pl">Tam, gdzie espeto naprawdę mieszka: niskie domki rybackie, łódki z ogniskami na piasku, ceny dla miejscowych. W <strong>El Tintero</strong> w El Palo kelnerzy krążą z talerzami i wykrzykują, co niosą — łapiecie w locie to, co wygląda najlepiej. Chaos, teatr i najlepsza smażona ryba w mieście.</span><span class="en">Where the espeto actually lives: low fishermen's houses, boats with fires on the sand, local prices. At <strong>El Tintero</strong> in El Palo, waiters circle with plates shouting what they're carrying — you grab whatever looks best as it passes. Chaos, theatre, and the best fried fish in town.</span></p>
     </div>
   </div>
@@ -1063,7 +1052,7 @@
     <div class="gem-number">04</div>
     <div class="gem-content">
       <h4>Baños del Carmen</h4>
-      <div class="gem-where"><span class="pl">Po drodze do Pedregalejo · najlepiej o zachodzie</span><span class="en">On the way to Pedregalejo · best at sunset</span></div>
+      <div class="gem-where"><span class="pl">Po drodze do Pedregalejo · najlepiej o zachodzie</span><span class="en">On the way to Pedregalejo · best at sunset</span> · <a class="maps" href="https://maps.app.goo.gl/4MxeeQauReheD9QSA" target="_blank" rel="noopener">Maps</a></div>
       <p><span class="pl">Kąpielisko z 1918 roku, dziś lekko podniszczony chiringuito pod starymi eukaliptusami, z tarasem nad samą wodą. Tinto de verano o zachodzie słońca z widokiem na całą zatokę — bez tłumów z Malaguety.</span><span class="en">A 1918 bathing house, now a faded-glory chiringuito under old eucalyptus trees with a terrace right over the water. A sunset tinto de verano looking across the whole bay — without the Malagueta crowds.</span></p>
     </div>
   </div>
@@ -1072,7 +1061,7 @@
     <div class="gem-number">05</div>
     <div class="gem-content">
       <h4>Mercado de Salamanca</h4>
-      <div class="gem-where"><span class="pl">Dzielnica El Molinillo · rano</span><span class="en">El Molinillo district · mornings</span></div>
+      <div class="gem-where"><span class="pl">Dzielnica El Molinillo · rano</span><span class="en">El Molinillo district · mornings</span> · <a class="maps" href="https://maps.app.goo.gl/Ekg4D7fGEFY5TcGk9" target="_blank" rel="noopener">Maps</a></div>
       <p><span class="pl">Młodszy, mniejszy brat Atarazanas, do którego turyści nie docierają: neomudéjarska hala z 1925 roku jak z bajki — podkowiaste łuki, kolorowe kafle — i targ, na którym słychać tylko hiszpański. 10 minut spaceru od centrum, a inny świat.</span><span class="en">Atarazanas' smaller, younger sibling that tourists never reach: a fairytale 1925 neo-Moorish hall — horseshoe arches, coloured tiles — and a market where you'll hear only Spanish. Ten minutes' walk from the centre, a different world.</span></p>
     </div>
   </div>
